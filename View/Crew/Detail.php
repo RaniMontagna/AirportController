@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,11 +12,14 @@
 <body>
     <h1>Resultado</h1><p>
     <?php
-        if (isset($_GET['user']) && isset($_GET['mail'])) {
-            echo '<br>Usuário: '.$_GET['user'] .
-                 '<br>Email: '.$_GET['mail'] .
-                 '<br>Tipo de Tripulante: '.$_GET['type'];
-        }          
+        if (isset($_SESSION['nomeCrew']) && isset($_SESSION['mail'])) {
+            echo '<br>Usuário: '.$_SESSION['nomeCrew'] .
+                 '<br>Email: '.$_SESSION['mail'] .
+                 '<br>Tipo de Tripulante: '.$_SESSION['typeCrew'];
+        }
+        unset($_SESSION['nomeCrew']);
+        unset($_SESSION['mail']);
+        unset($_SESSION['typeCrew']);
     ?>
 </body>
 </html>

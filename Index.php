@@ -41,9 +41,9 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quisquam ducimus molestiae aliquid. Officia suscipit sed qui, quas 
         voluptatibus repellendus accusamus necessitatibus placeat illum amet, voluptatem esse corrupti, quidem quod?</p>
         <h3>Possimus quisquam</h3>
-        <img src="https://images.unsplash.com/photo-1559023234-1e773470544f" alt="img1" />
-        <img src="https://images.unsplash.com/photo-1559711533-57a3e8092527" alt="img2" />
-        <img src="https://images.unsplash.com/photo-1567446188601-95f43044f6dc" alt="img3" />
+        <img src="./Public/Images/index_img1.jfif" alt="img1" />
+        <img src="./Public/Images/index_img2.jfif" alt="img2" />
+        <img src="./Public/Images/index_img3.jfif" alt="img3" />
     </div>
 </body>
 

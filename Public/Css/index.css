@@ -81,6 +81,7 @@ body, html {
 }
 
 .content img {
-	width: 471px;
+	width: 450px;
+	height: 300px;
 	border-radius: 30px;
 }

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../Model/Crew.php';
 include '../Include/CrewValidate.php';
 
@@ -31,15 +32,19 @@ if ((!empty($_POST['txtNome'])) &&
         $crew->tipo = $_POST['crewType'];
 
         // echo "Usuário $user->nome $user->sobrenome criado com sucesso!";
-        header("Location:../View/Crew/Detail.php?"."user=$crew->nome&"."mail=$crew->email&"."type=$crew->tipo");
+        $_SESSION['nomeCrew'] = $crew->nome;
+        $_SESSION['mail'] = $crew->mail;
+        $_SESSION['typeCrew'] = $crew->tipo;
+        header("Location:../View/Crew/Detail.php");
     } else {
         $err = serialize($erros);
-        header("Location:../View/Crew/Error.php?erros=$err");
+        $_SESSION['erros'] = $err;
+        header("Location:../View/Crew/Error.php");
     }
 } else {
     $erros = array();
     $erros[] = 'Informe todos os campos';
     $err = serialize($erros);
-
-    header("Location:../View/Crew/Error.php?erros=$err");
+    $_SESSION['erros'] = $err;
+    header("Location:../View/Crew/Error.php");
 }

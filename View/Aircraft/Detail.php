@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,9 +12,11 @@
 <body>
     <h1>Resultado</h1><p>
     <?php
-        if (isset($_GET['nome']) && isset($_GET['marca'])) {
-            echo $_GET['marca'] .' '.$_GET['nome'].' criado com sucesso!';
+        if (isset($_SESSION['nome']) && isset($_SESSION['marca'])) {
+            echo $_SESSION['marca'] .' '.$_SESSION['nome'].' criado com sucesso!';
         }
+        unset($_SESSION['nome']);
+        unset($_SESSION['marca']);
     ?>
 </body>
 </html>

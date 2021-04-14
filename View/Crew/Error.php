@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -11,13 +14,14 @@
 <body>
     <h1>Erros!</h1>
     <?php
-    if (isset($_GET['erros'])) {
+    if (isset($_SESSION['erros'])) {
         $erros = array();
-        $erros = unserialize($_GET['erros']);
+        $erros = unserialize($_SESSION['erros']);
 
         foreach ($erros as $e) {
             echo '<br />' . $e;
         }
+        unset($_SESSION['erros']);
     }
     ?>
 </body>

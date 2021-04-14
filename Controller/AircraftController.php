@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../Model/Aircraft.php';
 include '../Include/AircraftValidate.php';
 
@@ -26,14 +27,18 @@ if ((!empty($_POST['txtNome'])) &&
         $aircraft->tipoMotor = $_POST['txtTipoMotor'];
         $aircraft->qtdPassageiros = $_POST['numberQtdPassageiros'];
 
-        header("Location:../View/Aircraft/Detail.php?"."nome=$aircraft->nome&"."marca=$aircraft->marca");
+        $_SESSION['nameAircraft'] = $aircraft->nome;
+        $_SESSION['marca'] = $aircraft->marca;
+        header("Location:../View/Aircraft/Detail.php");
     } else {
         $err = serialize($erros);
-        header("Location:../View/Aircraft/Error.php?erros=$err");
+        $_SESSION['erros'] = $err;
+        header("Location:../View/Aircraft/Error.php");
     }
 } else {
     $erros = array();
     $erros[] = 'Informe todos os campos';
     $err = serialize($erros);
-    header("Location:../View/Aircraft/Error.php?erros=$err");
+    $_SESSION['erros'] = $err;
+    header("Location:../View/Aircraft/Error.php");
 }
