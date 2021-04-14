@@ -1,0 +1,86 @@
+/* Css Geral */
+
+* {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    display: flex;
+}
+
+/* Css para o menu */
+
+.menu {
+	text-align: center;
+	padding: 30px;
+	width: 250px;
+	float:left;
+	background-image: url("../Images/bg_menuIndex.jpg");
+    background-size: cover;
+    background-position-x: -250px;
+}
+
+.menu div h3 {
+    font-size: 2em;
+	font-weight: 400;
+}
+
+.menu div h6 {
+    font-size: 1em;
+	font-weight: 300;
+	margin-bottom: 50px;
+}
+
+.btn-menu {
+	margin-right: 10px;
+	margin-left: 10px;
+	padding: 5px;
+	width: 200px;
+	border: 3px solid white;
+	color: white;
+	font-weight: bold;
+	background-color: transparent;
+	border-radius: 10px;
+	margin-bottom: 10px;
+}
+
+.btn-menu:hover {
+	color: black;
+	font-weight: bold;
+	background-color: white;
+}
+
+.actor {
+	font-weight: 300;
+	position: relative;
+	top: 65%;
+    color: white;
+}
+
+/*  Css | Content */
+
+.content {
+	padding: 100px;
+}
+
+.content h1 {
+	font-weight: 700;
+}
+
+.content h3 {
+	font-weight: 500;
+	margin-top: 20px;
+}
+
+.content p {
+	font-weight: 300;
+	text-align: justify;
+}
+
+.content img {
+	width: 471px;
+	border-radius: 30px;
+}

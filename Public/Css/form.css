@@ -1,0 +1,87 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.aircraft {
+    background-image: url("../Images/bg_aircraft.jfif");
+}
+
+body.crew {
+    background-image: url("../Images/bg_crew.jfif");
+}
+
+div.box {
+    background-color: white;
+    padding: 40px 100px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+div.box form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+div.box form h1 {
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+div.box form label.principal {
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+div.box form input.txtArea {
+    padding: 5px;
+    margin: 0px 40px;
+}
+
+div.box form div.btns {
+    margin-top: 20px;
+}
+
+.btn-black {background-image: linear-gradient(to right, #232526 0%, #414345  51%, #232526  100%)}
+.btn-black {
+   padding: 10px 45px;
+   text-align: center;;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+ }
+
+ .btn-black:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+ }
+
+ .btn-back {
+    margin-top: 10px;
+    border: none;
+    background: none;
+    font-weight: 300;
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 20px;
+ }
+
+ .btn-back:hover {
+     transition: 0.5s;
+     border: 1px solid black;
+ }
