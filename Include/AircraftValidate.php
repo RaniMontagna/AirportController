@@ -1,6 +1,6 @@
 <?php
 
-class CompaniesValidate {
+class AircraftValidate {
     public static function testarPassageiros($paramPassageiros) {
         if ($paramPassageiros < 0 || $paramPassageiros > 2000) {
             return false;
