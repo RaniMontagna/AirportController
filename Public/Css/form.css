@@ -24,6 +24,14 @@ body.crew {
     background-image: url("../Images/bg_crew.jfif");
 }
 
+body.cities {
+    background-image: url("../Images/bg_cities.jfif")
+}
+
+body.companies {
+    background: url("../Images/bg_companies.jfif");
+}
+
 div.box {
     background-color: white;
     padding: 40px 100px;
@@ -56,22 +64,27 @@ div.box form div.btns {
     margin-top: 20px;
 }
 
-.btn-black {background-image: linear-gradient(to right, #232526 0%, #414345  51%, #232526  100%)}
 .btn-black {
-   padding: 10px 45px;
-   text-align: center;;
-   background-size: 200% auto;
-   color: white;            
-   box-shadow: 0 0 20px #eee;
-   border-radius: 10px;
- }
+    background-image: linear-gradient(to right, #232526 0%, #414345 51%, #232526 100%)
+}
 
- .btn-black:hover {
-   background-position: right center; /* change the direction of the change here */
-   color: #fff;
- }
+.btn-black {
+    padding: 10px 45px;
+    text-align: center;
+    ;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+}
 
- .btn-back {
+.btn-black:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+}
+
+.btn-back {
     margin-top: 10px;
     border: none;
     background: none;
@@ -79,9 +92,9 @@ div.box form div.btns {
     font-size: 1em;
     padding: 10px;
     border-radius: 20px;
- }
+}
 
- .btn-back:hover {
-     transition: 0.5s;
-     border: 1px solid black;
- }
+.btn-back:hover {
+    transition: 0.5s;
+    border: 1px solid black;
+}

@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro da tripulação</title>
 
+    <!-- FaviIcon -->
+    <link rel="icon" type="imagem/png" href="../../Public/Images/icon.png" />
+
     <!-- Css -->
     <link rel="stylesheet" type="text/css" href="../../Public/Css/form.css">
 </head>
@@ -26,19 +29,19 @@
 
             <label class="principal">Tipo de Tripulante:</label>
             <div class="options">
-            <input type="radio" id="passageiro" name="crewType" value="Passageiro" checked>
-            <label for="passageiro">Passageiro</label>
-            <input type="radio" id="aeremoca" name="crewType" value="Aeremoça">
-            <label for="aeremoca">Aeromoça</label>
-            <input type="radio" id="piloto" name="crewType" value="Piloto">
-            <label for="piloto">Piloto</label>
-            <input type="radio" id="copiloto" name="crewType" value="Copiloto">
-            <label for="copiloto">Copiloto</label>
+                <input type="radio" id="passageiro" name="crewType" value="Passageiro" checked>
+                <label for="passageiro">Passageiro</label>
+                <input type="radio" id="aeremoca" name="crewType" value="Aeremoça">
+                <label for="aeremoca">Aeromoça</label>
+                <input type="radio" id="piloto" name="crewType" value="Piloto">
+                <label for="piloto">Piloto</label>
+                <input type="radio" id="copiloto" name="crewType" value="Copiloto">
+                <label for="copiloto">Copiloto</label>
             </div>
 
             <div class="btns">
-            <input class="btn-black" type="submit" value="Cadastrar">
-            <input class="btn-black" type="reset" value="Limpar">
+                <input class="btn-black" type="submit" value="Cadastrar">
+                <input class="btn-black" type="reset" value="Limpar">
             </div>
         </form>
         <button class="btn-back" onclick="window.location.href = '../../Index.php'">Voltar para o início</button>
