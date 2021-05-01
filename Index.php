@@ -24,29 +24,32 @@
         <button class="btn-menu" onclick="window.location.href = '/View/Crew/Create.php'">Cadastrar Tripulante</button>
         <button class="btn-menu" onclick="window.location.href = '/View/Cities/Create.php'">Cadastrar Cidades</button>
         <button class="btn-menu" onclick="window.location.href = '/View/Companies/Create.php'">Cadastrar Companhias</button>
+        <button class="btn-menu" onclick="window.location.href = '/View/Airports/Create.php'">Cadastrar Aeroportos</button>
 
-        <p class="actor">© 2021 by Ranielli & Bernardo.</p>
+        <!-- <p class="actor">© 2021 by Ranielli & Bernardo.</p> -->
     </nav>
     <div class="content">
         <h1>Lorem ipsum dolor</h1>
         <h3>Aliquam aut dignissimos magnam</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum provident quas nemo veniam id! 
-        Voluptas rerum perspiciatis cupiditate saepe. Vitae quod quam, dolores optio facilis deserunt eum harum. 
-        Dolorem, delectus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis, voluptates dolor recusandae hic illo ea fugit. R
-        epudiandae reiciendis suscipit dolorum impedit, a expedita officiis dolore quae sapiente dicta pariatur ipsum? 
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quisquam ducimus molestiae aliquid. Officia suscipit sed qui, quas 
-        voluptatibus repellendus accusamus necessitatibus placeat illum amet, voluptatem esse corrupti, quidem quod?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum provident quas nemo veniam id!
+            Voluptas rerum perspiciatis cupiditate saepe. Vitae quod quam, dolores optio facilis deserunt eum harum.
+            Dolorem, delectus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis, voluptates dolor recusandae hic illo ea fugit. R
+            epudiandae reiciendis suscipit dolorum impedit, a expedita officiis dolore quae sapiente dicta pariatur ipsum?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quisquam ducimus molestiae aliquid. Officia suscipit sed qui, quas
+            voluptatibus repellendus accusamus necessitatibus placeat illum amet, voluptatem esse corrupti, quidem quod?</p>
         <h3>Similique voluptas</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum provident quas nemo veniam id! 
-        Voluptas rerum perspiciatis cupiditate saepe. Vitae quod quam, dolores optio facilis deserunt eum harum. 
-        Dolorem, delectus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis, voluptates dolor recusandae hic illo ea fugit. R
-        epudiandae reiciendis suscipit dolorum impedit, a expedita officiis dolore quae sapiente dicta pariatur ipsum? 
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quisquam ducimus molestiae aliquid. Officia suscipit sed qui, quas 
-        voluptatibus repellendus accusamus necessitatibus placeat illum amet, voluptatem esse corrupti, quidem quod?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum provident quas nemo veniam id!
+            Voluptas rerum perspiciatis cupiditate saepe. Vitae quod quam, dolores optio facilis deserunt eum harum.
+            Dolorem, delectus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis, voluptates dolor recusandae hic illo ea fugit. R
+            epudiandae reiciendis suscipit dolorum impedit, a expedita officiis dolore quae sapiente dicta pariatur ipsum?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quisquam ducimus molestiae aliquid. Officia suscipit sed qui, quas
+            voluptatibus repellendus accusamus necessitatibus placeat illum amet, voluptatem esse corrupti, quidem quod?</p>
         <h3>Possimus quisquam</h3>
-        <img src="./Public/Images/index_img1.jfif" alt="img1" />
-        <img src="./Public/Images/index_img2.jfif" alt="img2" />
-        <img src="./Public/Images/index_img3.jfif" alt="img3" />
+        <div class="images">
+            <img src="./Public/Images/aircraft1.jpg" alt="img1" />
+            <img src="./Public/Images/aircraft2.jpg" alt="img2" />
+            <img src="./Public/Images/aircraft3.jpg" alt="img3" />
+        </div>
     </div>
 </body>
 

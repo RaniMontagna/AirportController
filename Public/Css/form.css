@@ -32,6 +32,11 @@ body.companies {
     background: url("../Images/bg_companies.jfif");
 }
 
+body.airport {
+    background: url("../Images/bg_airports.jfif");
+    background-size: cover;
+}
+
 div.box {
     background-color: white;
     padding: 40px 100px;
@@ -57,7 +62,7 @@ div.box form label.principal {
 
 div.box form input.txtArea {
     padding: 5px;
-    margin: 0px 40px;
+    margin: 0px 30px;
 }
 
 div.box form div.btns {
