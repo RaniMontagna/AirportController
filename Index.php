@@ -15,40 +15,41 @@
 </head>
 
 <body>
-    <nav class="menu">
-        <div>
-            <h3>ADS - Casca</h3>
-            <h6>Desenvolvimento para Web</h6>
-        </div>
-        <button class="btn-menu" onclick="window.location.href = '/View/Aircraft/Create.php'">Cadastrar Aeronave</button>
-        <button class="btn-menu" onclick="window.location.href = '/View/Crew/Create.php'">Cadastrar Tripulante</button>
-        <button class="btn-menu" onclick="window.location.href = '/View/Cities/Create.php'">Cadastrar Cidades</button>
-        <button class="btn-menu" onclick="window.location.href = '/View/Companies/Create.php'">Cadastrar Companhias</button>
-        <button class="btn-menu" onclick="window.location.href = '/View/Airports/Create.php'">Cadastrar Aeroportos</button>
+    <div class="intro">
+        <div class="nav">
+            <nav class="nav">
+                <li>
+                    <a href="/View/Aircraft/Create.php">AERONAVES</a>
+                </li>
+                <li>
+                    <a href="/View/Crew/Create.php">TRIPULAÇÃO</a>
+                </li>
+                <li>
+                    <a href="/View/Cities/Create.php">CIDADES</a>
+                </li>
+                <li>
+                    <a href="/View/Companies/Create.php">COMPANIAS</a>
+                </li>
+                <li>
+                    <a href="/View/Airports/Create.php">AEROPORTOS</a>
+                </li>
+            </nav>
 
-        <!-- <p class="actor">© 2021 by Ranielli & Bernardo.</p> -->
-    </nav>
-    <div class="content">
-        <h1>Lorem ipsum dolor</h1>
-        <h3>Aliquam aut dignissimos magnam</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum provident quas nemo veniam id!
-            Voluptas rerum perspiciatis cupiditate saepe. Vitae quod quam, dolores optio facilis deserunt eum harum.
-            Dolorem, delectus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis, voluptates dolor recusandae hic illo ea fugit. R
-            epudiandae reiciendis suscipit dolorum impedit, a expedita officiis dolore quae sapiente dicta pariatur ipsum?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quisquam ducimus molestiae aliquid. Officia suscipit sed qui, quas
-            voluptatibus repellendus accusamus necessitatibus placeat illum amet, voluptatem esse corrupti, quidem quod?</p>
-        <h3>Similique voluptas</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum provident quas nemo veniam id!
-            Voluptas rerum perspiciatis cupiditate saepe. Vitae quod quam, dolores optio facilis deserunt eum harum.
-            Dolorem, delectus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis, voluptates dolor recusandae hic illo ea fugit. R
-            epudiandae reiciendis suscipit dolorum impedit, a expedita officiis dolore quae sapiente dicta pariatur ipsum?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quisquam ducimus molestiae aliquid. Officia suscipit sed qui, quas
-            voluptatibus repellendus accusamus necessitatibus placeat illum amet, voluptatem esse corrupti, quidem quod?</p>
-        <h3>Possimus quisquam</h3>
-        <div class="images">
-            <img src="./Public/Images/aircraft1.jpg" alt="img1" />
-            <img src="./Public/Images/aircraft2.jpg" alt="img2" />
-            <img src="./Public/Images/aircraft3.jpg" alt="img3" />
+            <div class="dropdown">
+                <button class="dropbtn">CADASTROS</button>
+                <div class="dropdown-content">
+                    <a href="/View/Aircraft/Create.php">AERONAVES</a>
+                    <a href="/View/Crew/Create.php">TRIPULAÇÃO</a>
+                    <a href="/View/Cities/Create.php">CIDADES</a>
+                    <a href="/View/Companies/Create.php">COMPANIAS</a>
+                    <a href="/View/Airports/Create.php">AEROPORTOS</a>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <h2>Bem-vindos ao</h2>
+            <h1>Airport Controller</h1>
+            <h3>Não deixe mais os voos atrasarem!</h3>
         </div>
     </div>
 </body>
