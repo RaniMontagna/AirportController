@@ -33,6 +33,9 @@
                 <li>
                     <a href="/View/Airports/Create.php">AEROPORTOS</a>
                 </li>
+                <li>
+                    <a href="/View/Ticket/Create.php">PASSAGENS</a>
+                </li>
             </nav>
 
             <div class="dropdown">
@@ -43,6 +46,7 @@
                     <a href="/View/Cities/Create.php">CIDADES</a>
                     <a href="/View/Companies/Create.php">COMPANIAS</a>
                     <a href="/View/Airports/Create.php">AEROPORTOS</a>
+                    <a href="/View/Ticket/Create.php">PASSAGENS</a>
                 </div>
             </div>
         </div>
