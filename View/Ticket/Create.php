@@ -22,17 +22,6 @@
             <input class="txtArea" type="text" name="txtAeroportoDestino" id="txtAeroportoDestino" placeholder="Aeroporto Internacional de Garulhos">
             <label class="principal">Data Saída:</label>
             <input class="txtArea" type="date" name="dataSaida" id="dataSaida" placeholder="17/05/2021">
-
-            <label class="principal" for="qtdPassageiros">Quantidade de Passageiros:</label>
-            <input class="txtArea" list="qtdPassageiro" name="qtdPassageiros" id="qtdPassageiros">
-            <datalist id="qtdPassageiro">
-                <option value="1">
-                <option value="2">
-                <option value="3">
-                <option value="4">
-            </datalist>
-
-
             <label class="principal">Preço:</label>
             <input class="txtArea" type="number" name="numberPreco" id="numberPreco" disabled>
 

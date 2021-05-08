@@ -2,6 +2,7 @@
 session_start();
 include '../Model/Crew.php';
 include '../Include/CrewValidate.php';
+include '../Dao/CrewDAO.php';
 
 if ((!empty($_POST['txtNome'])) &&
     (!empty($_POST['txtIdade'])) &&
@@ -31,9 +32,11 @@ if ((!empty($_POST['txtNome'])) &&
         $crew->senha = $_POST['txtSenha'];
         $crew->tipo = $_POST['crewType'];
 
-        // echo "Usuário $user->nome $user->sobrenome criado com sucesso!";
+        $crewDao = new CrewDAO();
+        $crewDao->create($crew);
+
         $_SESSION['nomeCrew'] = $crew->nome;
-        $_SESSION['mail'] = $crew->mail;
+        $_SESSION['mail'] = $crew->email;
         $_SESSION['typeCrew'] = $crew->tipo;
         header("Location:../View/Crew/Detail.php");
     } else {

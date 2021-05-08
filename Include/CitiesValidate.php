@@ -8,5 +8,13 @@ class CitiesValidate {
             return true;
         }
     }
+
+    public static function testarCEP($paramCEP) {
+        if (strlen($paramCEP) < 8 || strlen($paramCEP) > 8) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 }
 ?>

@@ -17,7 +17,7 @@
 <body class="companies">
     <div class="box">
         <form action="../../Controller/CompaniesController.php" method="post" name="form_user">
-            <h1>Cadastro | Companhias</h1>
+            <h1>Cadastro | Companias</h1>
 
             <label class="principal">CNPJ:</label>
             <input class="txtArea" type="number" name="numberCNPJ" id="numberCNPJ" placeholder="03342487000189">

@@ -2,8 +2,10 @@
 session_start();
 include '../Model/Cities.php';
 include '../Include/CitiesValidate.php';
+include '../Dao/CitiesDAO.php';
 
-if ((!empty($_POST['txtNome'])) &&
+if ((!empty($_POST['numberCEP'])) &&
+    (!empty($_POST['txtNome'])) &&
     (!empty($_POST['txtPais'])) &&
     (!empty($_POST['txtEstado']))
 ) {
@@ -13,12 +15,21 @@ if ((!empty($_POST['txtNome'])) &&
         $erros[] = 'Tamanho da sigla do estado é inválida.';
     }
 
+    if (!CitiesValidate::testarCEP($_POST['numberCEP'])) {
+        $erros[] = 'Número do cep informado é inválido.';
+    }
+
+
     if (count($erros) == 0) {
         $cities = new Cities();
 
+        $cities->cep = $_POST['numberCEP'];
         $cities->nome = $_POST['txtNome'];
         $cities->pais = $_POST['txtPais'];
         $cities->estado = $_POST['txtEstado'];
+
+        $citiesDao = new CitiesDAO();
+        $citiesDao->create($cities);
 
         $_SESSION['nomeCity'] = $cities->nome;
         $_SESSION['pais'] = $cities->pais;

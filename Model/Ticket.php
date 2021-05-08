@@ -4,7 +4,6 @@ class Ticket {
     var $id;
     var $aeroportoDestino;
     var $dataSaida;
-    var $qtdPassageiros;
     var $preco;
     
     //Metódo para atribuir/buscar valores nas variavéis

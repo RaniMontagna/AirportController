@@ -4,9 +4,9 @@ class Aircraft {
     var $id;
     var $nome;
     var $marca;
-    var $classe;
     var $tipoMotor;
-    var $qtdPassageiros;
+    var $maxPassageiros;
+    var $compania;
 
     //Metódo para atribuir/buscar valores nas variavéis
     public function __construct() {}

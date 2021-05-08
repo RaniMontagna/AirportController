@@ -2,6 +2,7 @@
 session_start();
 include '../Model/Companies.php';
 include '../Include/CompaniesValidate.php';
+include '../Dao/CompaniesDAO.php';
 
 if ((!empty($_POST['numberCNPJ'])) &&
     (!empty($_POST['txtRazaoSocial'])) &&
@@ -22,6 +23,9 @@ if ((!empty($_POST['numberCNPJ'])) &&
         $companies->cnpj = $_POST['numberCNPJ'];
         $companies->razaoSocial = $_POST['txtRazaoSocial'];
         $companies->nomeFantasia = $_POST['txtNomeFantasia'];
+        
+        $companiesDao = new CompaniesDAO();
+        $companiesDao->create($companies);
 
         $_SESSION['nomeFantasia'] = $companies->nomeFantasia;
         header("Location:../View/Companies/Detail.php");

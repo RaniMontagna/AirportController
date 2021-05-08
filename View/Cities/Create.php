@@ -18,6 +18,9 @@
     <div class="box">
         <form action="../../Controller/CitiesController.php" method="post" name="form_user">
             <h1>Cadastro | Cidades</h1>
+            <label class="principal">CEP:</label>
+            <input class="txtArea" type="number" name="numberCEP" id="numberCEP" placeholder="95360000">
+
             <label class="principal">Nome:</label>
             <input class="txtArea" type="text" name="txtNome" id="txtNome" placeholder="Paraí">
 

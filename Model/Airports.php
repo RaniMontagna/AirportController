@@ -1,6 +1,7 @@
 <?php 
 
 class Airports {
+    var $id;
     var $nome;
     var $porte;
     var $distancia;

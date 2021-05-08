@@ -1,6 +1,7 @@
 <?php 
 
 class Cities {
+    var $cep;
     var $nome;
     var $pais;
     var $estado;

@@ -5,24 +5,19 @@ include '../Include/TicketValidate.php';
 
 
 if ((!empty($_POST['txtAeroportoDestino'])) &&
-    (!empty($_POST['dataSaida'])) &&
-    (!empty($_POST['qtdPassageiros'])) 
+    (!empty($_POST['dataSaida']))
  ) {
     $erros = array();
 
     // if (!TicketValidate::testarData($_POST['dataSaida'])) {
     //     $erros[] = 'A data informada está inválida!';
     // }
-    if (!TicketValidate::testarQtdPassageiros($_POST['qtdPassageiros'])) {
-        $erros[] = 'Quantidade informada inválida';
-    }
 
     if (count($erros) == 0) {
         $ticket = new Ticket();
 
         $ticket->aeroportoDestino = $_POST['txtAeroportoDestino'];
         $ticket->dataSaida = $_POST['dataSaida'];
-        $ticket->qtdPassageiros = $_POST['qtdPassageiros'];
         $ticket->preco = $_POST['numberPreco'];
  
         $_SESSION['aeroportoDestino'] = $ticket->aeroportoDestino;

@@ -28,8 +28,11 @@
             <label class="principal">Tipo do Motor:</label>
             <input class="txtArea" type="text" name="txtTipoMotor" id="txtTipoMotor" placeholder="Turbofan">
 
-            <label class="principal">Quantidade de Passageiros:</label>
-            <input class="txtArea" type="number" name="numberQtdPassageiros" id="numberQtdPassageiros" placeholder="660">
+            <label class="principal">Máximo de passageiros:</label>
+            <input class="txtArea" type="number" name="numberMaxPassageiros" id="numberMaxPassageiros" placeholder="660">
+
+            <label class="principal">Compania(CNPJ):</label>
+            <input class="txtArea" type="number" name="numberCompania" id="numberCompania" placeholder="32546896541254">
 
             <div class="btns">
                 <input class="btn-black" type="submit" value="Cadastrar">

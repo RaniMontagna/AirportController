@@ -5,29 +5,30 @@ include '../Include/AircraftValidate.php';
 
 if ((!empty($_POST['txtNome'])) &&
     (!empty($_POST['txtMarca'])) &&
-    (!empty($_POST['txtClass'])) &&
     (!empty($_POST['txtTipoMotor'])) &&
-    (!empty($_POST['numberQtdPassageiros']))
+    (!empty($_POST['numberCompania'])) &&
+    (!empty($_POST['numberMaxPassageiros']))
 ) {
     $erros = array();
 
-    if (!AircraftValidate::testarPassageiros($_POST['numberQtdPassageiros'])) {
+    if (!AircraftValidate::testarPassageiros($_POST['numberMaxPassageiros'])) {
         $erros[] = 'Número de passageiros inválido';
     }
     if (!AircraftValidate::testarTipoMotor($_POST['txtTipoMotor'])) {
         $erros[] = 'Tipo de motor inválido';
     }
 
+
     if (count($erros) == 0) {
         $aircraft = new Aircraft();
 
         $aircraft->nome = $_POST['txtNome'];
         $aircraft->marca = $_POST['txtMarca'];
-        $aircraft->classe = $_POST['txtClasse'];
         $aircraft->tipoMotor = $_POST['txtTipoMotor'];
-        $aircraft->qtdPassageiros = $_POST['numberQtdPassageiros'];
+        $aircraft->qtdPassageiros = $_POST['numberMaxPassageiros'];
+        $aircraft->compania = $_POST['numberCompania'];
 
-        $_SESSION['nameAircraft'] = $aircraft->nome;
+        $_SESSION['nome'] = $aircraft->nome;
         $_SESSION['marca'] = $aircraft->marca;
         header("Location:../View/Aircraft/Detail.php");
     } else {

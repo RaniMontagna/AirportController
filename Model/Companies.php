@@ -1,7 +1,6 @@
 <?php 
 
 class Companies {
-    var $id;
     var $cnpj;
     var $razaoSocial;
     var $nomeFantasia;
