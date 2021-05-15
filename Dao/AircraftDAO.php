@@ -27,7 +27,34 @@
                 //Encerra a conexão com o DB
                 $this->connection = null;
             } catch (PDOException $e) {
-                echo "Ocorreram erros ao inserir uma nova cidade!";
+                echo "Ocorreram erros ao inserir uma nova aeronave!";
+                echo $e;
+            }
+        }
+
+        public function search() {
+            try {
+                $statement = $this->connection->prepare("SELECT * FROM aircraft");
+                $statement->execute();
+                $dados = $statement->fetchAll();
+                $this->connection = null;
+    
+                return $dados;
+            } catch (PDOException $e) {
+                echo "Ocorreram erros ao buscar as aeronaves";
+                echo $e;
+            }
+        }
+
+        public function delete($id) {
+            try {
+                $statement = $this->connection->prepare("DELETE FROM aircraft WHERE id = ?");
+                $statement->bindValue(1, $id);
+                $statement->execute(); 
+
+                $this->connection = null;
+            } catch (PDOException $e) {
+                echo "Ocorreram erros ao deletar uma aeronave";
                 echo $e;
             }
         }

@@ -16,14 +16,14 @@
 
 <body class="crew">
     <div class="box">
-        <form action="../../Controller/TicketController.php" method="post" name="form_user">
+        <form action="../../Controller/TicketController.php?operation=cadastrar" method="post" name="form_user">
             <h1>Cadastro | Passagem</h1>
             <label class="principal">Aeroporto Destino:</label>
-            <input class="txtArea" type="text" name="txtAeroportoDestino" id="txtAeroportoDestino" placeholder="Aeroporto Internacional de Garulhos">
+            <input required class="txtArea" type="text" name="txtAeroportoDestino" id="txtAeroportoDestino" placeholder="Aeroporto Internacional de Garulhos">
             <label class="principal">Data Saída:</label>
-            <input class="txtArea" type="date" name="dataSaida" id="dataSaida" placeholder="17/05/2021">
+            <input required class="txtArea" type="date" name="dataSaida" id="dataSaida" placeholder="17/05/2021">
             <label class="principal">Preço:</label>
-            <input class="txtArea" type="number" name="numberPreco" id="numberPreco" disabled>
+            <input required class="txtArea" type="number" name="numberPreco" id="numberPreco">
 
             <div class="btns">
                 <input class="btn-black" type="submit" value="Cadastrar">

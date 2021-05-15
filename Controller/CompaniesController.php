@@ -4,10 +4,7 @@ include '../Model/Companies.php';
 include '../Include/CompaniesValidate.php';
 include '../Dao/CompaniesDAO.php';
 
-if ((!empty($_POST['numberCNPJ'])) &&
-    (!empty($_POST['txtRazaoSocial'])) &&
-    (!empty($_POST['txtNomeFantasia']))
-) {
+function criar() {
     $erros = array();
 
     if (!CompaniesValidate::testarCNPJ($_POST['numberCNPJ'])) {
@@ -34,10 +31,45 @@ if ((!empty($_POST['numberCNPJ'])) &&
         $_SESSION['erros'] = $err;
         header("Location:../View/Companies/Error.php");
     }
-} else {
-    $erros = array();
-    $erros[] = 'Informe todos os campos';
-    $err = serialize($erros);
-    $_SESSION['erros'] = $err;
-    header("Location:../View/Companies/Error.php");
+}
+
+function listar() {
+    $companiesDao = new CompaniesDao();
+    $companies = $companiesDao->search();
+
+    $_SESSION['companies'] = serialize($companies);
+    header("Location:../View/Companies/List.php");
+}
+
+function atualizar() {
+
+}
+
+function deletar() {
+    $id = $_GET["id"];
+    if (isset($id)) {
+        $companiesDao = new CompaniesDao();
+        $companiesDao->delete($id);
+        header("Location:../../Controller/CompaniesController.php?operation=consultar");
+    } else {
+        echo "Compania informada não existinte";
+    }
+}
+
+$operacao = $_GET["operation"];
+if(isset($operacao)) {
+    switch($operacao) {
+        case 'cadastrar':
+            criar();
+            break;
+        case 'consultar':
+            listar();
+            break;
+        case 'atualizar':
+            atualizar();
+            break;
+        case 'deletar':
+            deletar();
+            break;
+    }
 }

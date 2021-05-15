@@ -16,19 +16,19 @@
 
 <body class="airport">
     <div class="box">
-        <form action="../../Controller/AirportsController.php" method="post" name="form_user">
+        <form action="../../Controller/AirportsController.php?operation=cadastrar" method="post" name="form_user">
             <h1>Cadastro | Aeroportos</h1>
             <label class="principal">Nome:</label>
-            <input class="txtArea" type="text" name="txtNome" id="txtNome" placeholder="Aeroporto Internacional de Garulhos" required>
+            <input required class="txtArea" type="text" name="txtNome" id="txtNome" placeholder="Aeroporto Internacional de Garulhos">
 
             <label class="principal">Porte:</label>
-            <input class="txtArea" type="text" name="txtPorte" id="txtPorte" placeholder="Medio">
+            <input required class="txtArea" type="text" name="txtPorte" id="txtPorte" placeholder="Medio">
 
             <label class="principal">Distância(Km):</label>
-            <input class="txtArea" type="number" name="numberDistancia" id="numberDistancia" placeholder="1257" required>
+            <input required class="txtArea" type="number" name="numberDistancia" id="numberDistancia" placeholder="1257">
 
             <label class="principal">CEP:</label>
-            <input class="txtArea" type="number" name="numberCep" id="numberCep" placeholder="07190972">
+            <input required class="txtArea" type="number" name="numberCep" id="numberCep" placeholder="07190972">
 
             <div class="btns">
                 <input class="btn-black" type="submit" value="Cadastrar">

@@ -31,6 +31,33 @@
                 echo $e;
             }
         }
+
+        public function search() {
+            try {
+                $statement = $this->connection->prepare("SELECT * FROM crew");
+                $statement->execute();
+                $dados = $statement->fetchAll();
+                $this->connection = null;
+    
+                return $dados;
+            } catch (PDOException $e) {
+                echo "Ocorreram erros ao buscar os tripulantes";
+                echo $e;
+            }
+        }
+
+        public function delete($id) {
+            try {
+                $statement = $this->connection->prepare("DELETE FROM crew WHERE id = ?");
+                $statement->bindValue(1, $id);
+                $statement->execute(); 
+
+                $this->connection = null;
+            } catch (PDOException $e) {
+                echo "Ocorreram erros ao deletar o tripulante";
+                echo $e;
+            }
+        }
     }
 
 

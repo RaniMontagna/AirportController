@@ -1,22 +1,22 @@
 <?php
     include '../Persistence/ConnectionDB.php';
 
-    class CompaniesDAO {
+    class TicketDAO {
         private $connection = null;
 
         public function __construct() {
-            $this->connection = ConnectionDB::getInstance();
+            $this->connection =ConnectionDB::getInstance();
         }
 
-        public function create($companies) {
+        public function create($ticket) {
             try {
                 $statement = $this->connection->prepare(
-                    "INSERT INTO companies(cnpj, razaoSocial, nomeFantasia) VALUES (?,?,?)"
+                    "INSERT INTO tickets(aeroportoDestino, dataSaida, preco) VALUES (?,?,?)"
                 );
 
-                $statement->bindValue(1, $companies->cnpj);
-                $statement->bindValue(2, $companies->razaoSocial);
-                $statement->bindValue(3, $companies->nomeFantasia);
+                $statement->bindValue(1, $ticket->aeroportoDestino);
+                $statement->bindValue(2, $ticket->dataSaida);
+                $statement->bindValue(3, $ticket->preco);
 
                 $statement->execute();
 
@@ -25,34 +25,34 @@
                 //Encerra a conexão com o DB
                 $this->connection = null;
             } catch (PDOException $e) {
-                echo "Ocorreram erros ao inserir uma nova compania!";
+                echo "Ocorreram erros ao inserir um novo ticket!";
                 echo $e;
             }
         }
 
         public function search() {
             try {
-                $statement = $this->connection->prepare("SELECT * FROM companies");
+                $statement = $this->connection->prepare("SELECT * FROM tickets");
                 $statement->execute();
                 $dados = $statement->fetchAll();
                 $this->connection = null;
     
                 return $dados;
             } catch (PDOException $e) {
-                echo "Ocorreram erros ao buscar as companias";
+                echo "Ocorreram erros ao buscar as passagens";
                 echo $e;
             }
         }
 
         public function delete($id) {
             try {
-                $statement = $this->connection->prepare("DELETE FROM companies WHERE cnpj = ?");
+                $statement = $this->connection->prepare("DELETE FROM tickets WHERE id = ?");
                 $statement->bindValue(1, $id);
                 $statement->execute(); 
 
                 $this->connection = null;
             } catch (PDOException $e) {
-                echo "Ocorreram erros ao deletar uma compania";
+                echo "Ocorreram erros ao deletar a passagem";
                 echo $e;
             }
         }

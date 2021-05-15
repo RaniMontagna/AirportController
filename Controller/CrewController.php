@@ -4,12 +4,7 @@ include '../Model/Crew.php';
 include '../Include/CrewValidate.php';
 include '../Dao/CrewDAO.php';
 
-if ((!empty($_POST['txtNome'])) &&
-    (!empty($_POST['txtIdade'])) &&
-    (!empty($_POST['txtEmail'])) &&
-    (!empty($_POST['txtSenha'])) &&
-    (!empty($_POST['crewType']))
-) {
+function criar() {
     $erros = array();
 
     if (!CrewValidate::testarIdade($_POST['txtIdade'])) {
@@ -44,10 +39,45 @@ if ((!empty($_POST['txtNome'])) &&
         $_SESSION['erros'] = $err;
         header("Location:../View/Crew/Error.php");
     }
-} else {
-    $erros = array();
-    $erros[] = 'Informe todos os campos';
-    $err = serialize($erros);
-    $_SESSION['erros'] = $err;
-    header("Location:../View/Crew/Error.php");
+}
+
+function listar() {
+    $crewDao = new CrewDao();
+    $crew = $crewDao->search();
+
+    $_SESSION['crew'] = serialize($crew);
+    header("Location:../View/Crew/List.php");
+}
+
+function atualizar() {
+
+}
+
+function deletar() {
+    $id = $_GET["id"];
+    if (isset($id)) {
+        $crewDao = new CrewDao();
+        $crewDao->delete($id);
+        header("Location:../../Controller/CrewController.php?operation=consultar");
+    } else {
+        echo "Tripulante informado não existinte";
+    }
+}
+
+$operacao = $_GET["operation"];
+if(isset($operacao)) {
+    switch($operacao) {
+        case 'cadastrar':
+            criar();
+            break;
+        case 'consultar':
+            listar();
+            break;
+        case 'atualizar':
+            atualizar();
+            break;
+        case 'deletar':
+            deletar();
+            break;
+    }
 }

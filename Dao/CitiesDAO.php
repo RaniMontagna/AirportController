@@ -30,6 +30,33 @@
                 echo $e;
             }
         }
+
+        public function search() {
+            try {
+                $statement = $this->connection->prepare("SELECT * FROM cities");
+                $statement->execute();
+                $dados = $statement->fetchAll();
+                $this->connection = null;
+    
+                return $dados;
+            } catch (PDOException $e) {
+                echo "Ocorreram erros ao buscar as cidades";
+                echo $e;
+            }
+        }
+
+        public function delete($id) {
+            try {
+                $statement = $this->connection->prepare("DELETE FROM cities WHERE cep = ?");
+                $statement->bindValue(1, $id);
+                $statement->execute(); 
+
+                $this->connection = null;
+            } catch (PDOException $e) {
+                echo "Ocorreram erros ao deletar uma cidade";
+                echo $e;
+            }
+        }
     }
 
 

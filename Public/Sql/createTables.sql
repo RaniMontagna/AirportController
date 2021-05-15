@@ -1,8 +1,13 @@
+create table `airportcontroller` . `companies` (
+    cnpj bigint PRIMARY KEY NOT NULL,
+    razaoSocial varchar(50) NOT NULL,
+    nomeFantasia varchar(50)
+);
+
 create table `airportcontroller` . `aircraft` (
 	id integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
     nome varchar(30) NOT NULL,
     marca varchar(30) NOT NULL,
-    classe varchar(15),
     tipoMotor varchar(30),
     maxPassageiros integer,
     compania bigint,
@@ -18,17 +23,11 @@ create table `airportcontroller` . `cities` (
 
 create table `airportcontroller` . `airports` (
 	id integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    nome varchar(30) NOT NULL unique,
+    nome varchar(100) NOT NULL unique,
     porte varchar(15) NOT NULL,
     distancia real NOT NULL,
     cep integer NOT NULL,
     CONSTRAINT fk_cep FOREIGN KEY (cep) REFERENCES cities(cep)
-);
-
-create table `airportcontroller` . `companies` (
-    cnpj bigint PRIMARY KEY NOT NULL,
-    razaoSocial varchar(50) NOT NULL,
-    nomeFantasia varchar(50)
 );
 
 create table `airportcontroller` . `crew` (
@@ -42,7 +41,7 @@ create table `airportcontroller` . `crew` (
 
 create table `airportcontroller` . `tickets` (
 	id integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    aeroportoDestino varchar(30) NOT NULL,
+    aeroportoDestino varchar(100) NOT NULL,
     dataSaida date NOT NULL,
     preco real NOT NULL,
     CONSTRAINT fk_aeroportoDestino FOREIGN KEY (aeroportoDestino) REFERENCES airports(nome)
@@ -51,3 +50,6 @@ create table `airportcontroller` . `tickets` (
 SELECT * FROM Cities;
 SELECT * FROM Crew;
 SELECT * FROM Companies;
+SELECT * FROM Tickets;
+SELECT * FROM Aircraft;
+SELECT * FROM Airports;

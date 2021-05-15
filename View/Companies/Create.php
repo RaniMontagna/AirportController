@@ -16,17 +16,17 @@
 
 <body class="companies">
     <div class="box">
-        <form action="../../Controller/CompaniesController.php" method="post" name="form_user">
+        <form action="../../Controller/CompaniesController.php?operation=cadastrar" method="post" name="form_user">
             <h1>Cadastro | Companias</h1>
 
             <label class="principal">CNPJ:</label>
-            <input class="txtArea" type="number" name="numberCNPJ" id="numberCNPJ" placeholder="03342487000189">
+            <input required class="txtArea" type="number" name="numberCNPJ" id="numberCNPJ" placeholder="03342487000189">
             
             <label class="principal">Razão Social:</label>
-            <input class="txtArea" type="text" name="txtRazaoSocial" id="txtRazaoSocial" placeholder="Bola Transportation Ltda">
+            <input required class="txtArea" type="text" name="txtRazaoSocial" id="txtRazaoSocial" placeholder="Bola Transportation Ltda">
 
             <label class="principal">Nome Fantasia:</label>
-            <input class="txtArea" type="text" name="txtNomeFantasia" id="txtNomeFantasia" placeholder="Bola Airlines">
+            <input required class="txtArea" type="text" name="txtNomeFantasia" id="txtNomeFantasia" placeholder="Bola Airlines">
 
             <div class="btns">
                 <input class="btn-black" type="submit" value="Cadastrar">

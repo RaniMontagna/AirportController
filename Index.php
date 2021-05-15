@@ -19,22 +19,22 @@
         <div class="nav">
             <nav class="nav">
                 <li>
-                    <a href="/View/Aircraft/Create.php">AERONAVES</a>
+                    <a href="/View/Aircraft/Index.php">AERONAVES</a>
                 </li>
                 <li>
-                    <a href="/View/Crew/Create.php">TRIPULAÇÃO</a>
+                    <a href="/View/Crew/Index.php">TRIPULAÇÃO</a>
                 </li>
                 <li>
-                    <a href="/View/Cities/Create.php">CIDADES</a>
+                    <a href="/View/Cities/Index.php">CIDADES</a>
                 </li>
                 <li>
-                    <a href="/View/Companies/Create.php">COMPANIAS</a>
+                    <a href="/View/Companies/Index.php">COMPANIAS</a>
                 </li>
                 <li>
-                    <a href="/View/Airports/Create.php">AEROPORTOS</a>
+                    <a href="/View/Airports/Index.php">AEROPORTOS</a>
                 </li>
                 <li>
-                    <a href="/View/Ticket/Create.php">PASSAGENS</a>
+                    <a href="/View/Ticket/Index.php">PASSAGENS</a>
                 </li>
             </nav>
 

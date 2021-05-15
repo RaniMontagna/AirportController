@@ -16,16 +16,16 @@
 
 <body class="crew">
     <div class="box">
-        <form action="../../Controller/CrewController.php" method="post" name="form_user">
+        <form action="../../Controller/CrewController.php?operation=cadastrar" method="post" name="form_user">
             <h1>Cadastro | Tripulação</h1>
             <label class="principal">Nome:</label>
-            <input class="txtArea" type="text" name="txtNome" id="txtNome" placeholder="Lucas">
+            <input required class="txtArea" type="text" name="txtNome" id="txtNome" placeholder="Lucas">
             <label class="principal">Idade:</label>
-            <input class="txtArea" type="text" name="txtIdade" id="txtIdade" placeholder="18">
+            <input required class="txtArea" type="text" name="txtIdade" id="txtIdade" placeholder="18">
             <label class="principal">Email:</label>
-            <input class="txtArea" type="text" name="txtEmail" id="txtEmail" placeholder="lucas@upf.br">
+            <input required class="txtArea" type="text" name="txtEmail" id="txtEmail" placeholder="lucas@upf.br">
             <label class="principal">Senha:</label>
-            <input class="txtArea" type="password" name="txtSenha" id="txtSenha" placeholder="Lucas12048!">
+            <input required class="txtArea" type="password" name="txtSenha" id="txtSenha" placeholder="Lucas12048!">
 
             <label class="principal">Tipo de Tripulante:</label>
             <div class="options">

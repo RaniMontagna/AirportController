@@ -2,12 +2,9 @@
 session_start();
 include '../Model/Airports.php';
 include '../Include/AirportsValidate.php';
+include '../Dao/AirportsDAO.php';
 
-if ((!empty($_POST['txtNome'])) &&
-    (!empty($_POST['txtPorte'])) &&
-    (!empty($_POST['numberDistancia'])) &&
-    (!empty($_POST['numberCep']))
-) {
+function criar() {
     $erros = array();
 
     if (!AirportsValidate::testarNome($_POST['txtNome'])) {
@@ -25,6 +22,9 @@ if ((!empty($_POST['txtNome'])) &&
         $airports->porte = $_POST['txtPorte'];
         $airports->distancia = $_POST['numberDistancia'];
         $airports->cep = $_POST['numberCep'];
+        
+        $airportsDao = new AirportsDAO();
+        $airportsDao->create($airports);
 
         $_SESSION['nome'] = $airports->nome;
         $_SESSION['distancia'] = $airports->distancia;
@@ -35,10 +35,45 @@ if ((!empty($_POST['txtNome'])) &&
         $_SESSION['erros'] = $err;
         header("Location:../View/Airports/Error.php");
     }
-} else {
-    $erros = array();
-    $erros[] = 'Informe todos os campos';
-    $err = serialize($erros);
-    $_SESSION['erros'] = $err;
-    header("Location:../View/Airports/Error.php");
+}
+
+function listar() {
+    $airportsDao = new AirportsDao();
+    $airports = $airportsDao->search();
+
+    $_SESSION['airports'] = serialize($airports);
+    header("Location:../View/Airports/List.php");
+}
+
+function atualizar() {
+
+}
+
+function deletar() {
+    $id = $_GET["id"];
+    if (isset($id)) {
+        $airportsDao = new AirportsDao();
+        $airportsDao->delete($id);
+        header("Location:../../Controller/AirportsController.php?operation=consultar");
+    } else {
+        echo "Aeroporto informado não existinte";
+    }
+}
+
+$operacao = $_GET["operation"];
+if(isset($operacao)) {
+    switch($operacao) {
+        case 'cadastrar':
+            criar();
+            break;
+        case 'consultar':
+            listar();
+            break;
+        case 'atualizar':
+            atualizar();
+            break;
+        case 'deletar':
+            deletar();
+            break;
+    }
 }

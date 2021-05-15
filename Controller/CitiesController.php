@@ -4,11 +4,7 @@ include '../Model/Cities.php';
 include '../Include/CitiesValidate.php';
 include '../Dao/CitiesDAO.php';
 
-if ((!empty($_POST['numberCEP'])) &&
-    (!empty($_POST['txtNome'])) &&
-    (!empty($_POST['txtPais'])) &&
-    (!empty($_POST['txtEstado']))
-) {
+function criar() {
     $erros = array();
 
     if (!CitiesValidate::testarEstado($_POST['txtEstado'])) {
@@ -40,10 +36,45 @@ if ((!empty($_POST['numberCEP'])) &&
         $_SESSION['erros'] = $err;
         header("Location:../View/Cities/Error.php");
     }
-} else {
-    $erros = array();
-    $erros[] = 'Informe todos os campos';
-    $err = serialize($erros);
-    $_SESSION['erros'] = $err;
-    header("Location:../View/Cities/Error.php");
+}
+
+function listar() {
+    $citiesDao = new CitiesDao();
+    $cities = $citiesDao->search();
+
+    $_SESSION['cities'] = serialize($cities);
+    header("Location:../View/Cities/List.php");
+}
+
+function atualizar() {
+
+}
+
+function deletar() {
+    $id = $_GET["id"];
+    if (isset($id)) {
+        $citiesDao = new CitiesDao();
+        $citiesDao->delete($id);
+        header("Location:../../Controller/CitiesController.php?operation=consultar");
+    } else {
+        echo "Usuário informado não existinte";
+    }
+}
+
+$operacao = $_GET["operation"];
+if(isset($operacao)) {
+    switch($operacao) {
+        case 'cadastrar':
+            criar();
+            break;
+        case 'consultar':
+            listar();
+            break;
+        case 'atualizar':
+            atualizar();
+            break;
+        case 'deletar':
+            deletar();
+            break;
+    }
 }
