@@ -69,6 +69,12 @@ div.box form div.btns {
     margin-top: 20px;
 }
 
+@media (max-width:800px) {
+    div.box {
+        padding: 2em 4em;
+    }
+}
+
 .btn-black {
     background-image: linear-gradient(to right, #232526 0%, #414345 51%, #232526 100%)
 }

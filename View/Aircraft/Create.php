@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -15,32 +18,37 @@
 </head>
 
 <body class="aircraft">
-    <div class="box">
-        <form action="../../Controller/AircraftController.php?operation=cadastrar" method="post" name="form_user">
-            <h1>Cadastro | Aeronaves</h1>
+    <?php
+    if (isset($_SESSION['usuario'])) { ?>
+        <div class="box">
+            <form action="../../Controller/AircraftController.php?operation=cadastrar" method="post" name="form_user">
+                <h1>Cadastro | Aeronaves</h1>
 
-            <label class="principal">Nome:</label>
-            <input required class="txtArea" type="text" name="txtNome" id="txtNome" placeholder="747-400">
+                <label class="principal">Nome:</label>
+                <input required class="txtArea" type="text" name="txtNome" id="txtNome" placeholder="747-400">
 
-            <label class="principal">Marca:</label>
-            <input required class="txtArea" type="text" name="txtMarca" id="txtMarca" placeholder="Boeing">
+                <label class="principal">Marca:</label>
+                <input required class="txtArea" type="text" name="txtMarca" id="txtMarca" placeholder="Boeing">
 
-            <label class="principal">Tipo do Motor:</label>
-            <input required class="txtArea" type="text" name="txtTipoMotor" id="txtTipoMotor" placeholder="Turbofan">
+                <label class="principal">Tipo do Motor:</label>
+                <input required class="txtArea" type="text" name="txtTipoMotor" id="txtTipoMotor" placeholder="Turbofan">
 
-            <label class="principal">Máximo de passageiros:</label>
-            <input required class="txtArea" type="number" name="numberMaxPassageiros" id="numberMaxPassageiros" placeholder="660">
+                <label class="principal">Máximo de passageiros:</label>
+                <input required class="txtArea" type="number" name="numberMaxPassageiros" id="numberMaxPassageiros" placeholder="660">
 
-            <label class="principal">Compania(CNPJ):</label>
-            <input required class="txtArea" type="number" name="numberCompania" id="numberCompania" placeholder="32546896541254">
+                <label class="principal">Compania(CNPJ):</label>
+                <input required class="txtArea" type="number" name="numberCompania" id="numberCompania" placeholder="32546896541254">
 
-            <div class="btns">
-                <input class="btn-black" type="submit" value="Cadastrar">
-                <input class="btn-black" type="reset" value="Limpar">
-            </div>
-        </form>
-        <button class="btn-back" onclick="window.location.href = '../../Index.php'">Voltar para o início</button>
-    </div>
+                <div class="btns">
+                    <input class="btn-black" type="submit" value="Cadastrar">
+                    <input class="btn-black" type="reset" value="Limpar">
+                </div>
+            </form>
+            <button class="btn-back" onclick="window.location.href = '../app.php'">Voltar para o início</button>
+        </div>
+    <?php } else {
+        header("Location:../app.php");
+    } ?>
 </body>
 
 </html>

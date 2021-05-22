@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -15,28 +18,33 @@
 </head>
 
 <body class="airport">
-    <div class="box">
-        <form action="../../Controller/AirportsController.php?operation=cadastrar" method="post" name="form_user">
-            <h1>Cadastro | Aeroportos</h1>
-            <label class="principal">Nome:</label>
-            <input required class="txtArea" type="text" name="txtNome" id="txtNome" placeholder="Aeroporto Internacional de Garulhos">
+    <?php
+    if (isset($_SESSION['usuario'])) { ?>
+        <div class="box">
+            <form action="../../Controller/AirportsController.php?operation=cadastrar" method="post" name="form_user">
+                <h1>Cadastro | Aeroportos</h1>
+                <label class="principal">Nome:</label>
+                <input required class="txtArea" type="text" name="txtNome" id="txtNome" placeholder="Aeroporto Internacional de Garulhos">
 
-            <label class="principal">Porte:</label>
-            <input required class="txtArea" type="text" name="txtPorte" id="txtPorte" placeholder="Medio">
+                <label class="principal">Porte:</label>
+                <input required class="txtArea" type="text" name="txtPorte" id="txtPorte" placeholder="Medio">
 
-            <label class="principal">Distância(Km):</label>
-            <input required class="txtArea" type="number" name="numberDistancia" id="numberDistancia" placeholder="1257">
+                <label class="principal">Distância(Km):</label>
+                <input required class="txtArea" type="number" name="numberDistancia" id="numberDistancia" placeholder="1257">
 
-            <label class="principal">CEP:</label>
-            <input required class="txtArea" type="number" name="numberCep" id="numberCep" placeholder="07190972">
+                <label class="principal">CEP:</label>
+                <input required class="txtArea" type="number" name="numberCep" id="numberCep" placeholder="07190972">
 
-            <div class="btns">
-                <input class="btn-black" type="submit" value="Cadastrar">
-                <input class="btn-black" type="reset" value="Limpar">
-            </div>
-        </form>
-        <button class="btn-back" onclick="window.location.href = '../../Index.php'">Voltar para o início</button>
-    </div>
+                <div class="btns">
+                    <input class="btn-black" type="submit" value="Cadastrar">
+                    <input class="btn-black" type="reset" value="Limpar">
+                </div>
+            </form>
+            <button class="btn-back" onclick="window.location.href = '../app.php'">Voltar para o início</button>
+        </div>
+    <?php } else {
+        header("Location:../app.php");
+    } ?>
 </body>
 
 </html>

@@ -47,6 +47,14 @@ create table `airportcontroller` . `tickets` (
     CONSTRAINT fk_aeroportoDestino FOREIGN KEY (aeroportoDestino) REFERENCES airports(nome)
 );
 
+create table `airportcontroller` . `user` (
+	id integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	email varchar(50) NOT NULL,
+    senha varchar(30) NOT NULL
+);
+
+INSERT INTO User (email, senha) VALUES ('admin@admin', '123');
+
 SELECT * FROM Cities;
 SELECT * FROM Crew;
 SELECT * FROM Companies;

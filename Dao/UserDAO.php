@@ -57,7 +57,7 @@
 
         public function find($email, $senha) {
             try {
-                $statement = $this->connection->prepare("SELECT * FROM Usuarios WHERE email = ? and password = ?");
+                $statement = $this->connection->prepare("SELECT * FROM User WHERE email = ? and senha = ?");
                 $statement->bindValue(1, $email);
                 $statement->bindValue(2, $senha);
                 $statement->execute();

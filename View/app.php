@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -21,34 +24,34 @@
             <div class="nav">
                 <nav class="nav">
                     <li>
-                        <a href="/Aircraft/Index.php">AERONAVES</a>
+                        <a href="./Aircraft/Index.php">AERONAVES</a>
                     </li>
                     <li>
-                        <a href="/Crew/Index.php">TRIPULAÇÃO</a>
+                        <a href="./Crew/Index.php">TRIPULAÇÃO</a>
                     </li>
                     <li>
-                        <a href="/Cities/Index.php">CIDADES</a>
+                        <a href="./Cities/Index.php">CIDADES</a>
                     </li>
                     <li>
-                        <a href="/Companies/Index.php">COMPANIAS</a>
+                        <a href="./Companies/Index.php">COMPANIAS</a>
                     </li>
                     <li>
-                        <a href="/Airports/Index.php">AEROPORTOS</a>
+                        <a href="./Airports/Index.php">AEROPORTOS</a>
                     </li>
                     <li>
-                        <a href="/Ticket/Index.php">PASSAGENS</a>
+                        <a href="./Ticket/Index.php">PASSAGENS</a>
                     </li>
                 </nav>
 
                 <div class="dropdown">
-                    <button class="dropbtn">CADASTROS</button>
+                    <button class="dropbtn">CADASTROS E CONSULTAS</button>
                     <div class="dropdown-content">
-                        <a href="/Aircraft/Create.php">AERONAVES</a>
-                        <a href="/Crew/Create.php">TRIPULAÇÃO</a>
-                        <a href="/Cities/Create.php">CIDADES</a>
-                        <a href="/Companies/Create.php">COMPANIAS</a>
-                        <a href="/Airports/Create.php">AEROPORTOS</a>
-                        <a href="/Ticket/Create.php">PASSAGENS</a>
+                        <a href="./Aircraft/Index.php">AERONAVES</a>
+                        <a href="./Crew/Index.php">TRIPULAÇÃO</a>
+                        <a href="./Cities/Index.php">CIDADES</a>
+                        <a href="./Companies/Index.php">COMPANIAS</a>
+                        <a href="./Airports/Index.php">AEROPORTOS</a>
+                        <a href="./Ticket/Index.php">PASSAGENS</a>
                     </div>
                 </div>
             </div>
