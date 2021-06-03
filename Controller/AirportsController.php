@@ -26,10 +26,7 @@ function criar() {
         $airportsDao = new AirportsDAO();
         $airportsDao->create($airports);
 
-        $_SESSION['nome'] = $airports->nome;
-        $_SESSION['distancia'] = $airports->distancia;
-
-        header("Location:../View/Airports/Detail.php");
+        header("Location:./AirportsController.php?operation=consultar");
     } else {
         $err = serialize($erros);
         $_SESSION['erros'] = $err;

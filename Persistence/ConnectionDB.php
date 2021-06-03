@@ -13,7 +13,7 @@
                     self::$instance = new ConnectionDB (
                         "mysql:dbname=airportcontroller;host=localhost",
                         "root",
-                        "xelos1064"
+                        "bernardo123.134"
                     );
                     echo "Conexão ao banco de dados efetuado com sucesso!";
                 } catch (Exception $e) {

@@ -27,10 +27,7 @@ function criar() {
         $citiesDao = new CitiesDAO();
         $citiesDao->create($cities);
 
-        $_SESSION['nomeCity'] = $cities->nome;
-        $_SESSION['pais'] = $cities->pais;
-        $_SESSION['estado'] = $cities->estado;
-        header("Location:../View/Cities/Detail.php");
+        header("Location:./CitiesController.php?operation=consultar");
     } else {
         $err = serialize($erros);
         $_SESSION['erros'] = $err;

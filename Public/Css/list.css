@@ -1,0 +1,71 @@
+/* Configurações gerais da pagina */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+/* Configurações do header da página */
+div.header {
+    background: #c31432;
+    background: -webkit-linear-gradient(to right, #240b36, #c31432);
+    background: linear-gradient(to right, #240b36, #c31432);
+    color: white;
+    height: 10em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+div.header h1 {
+    font-size: 2.5em;
+}
+
+div.header h2 {
+    font-weight: 300;
+}
+
+div.header a {
+    margin-top: 1em;
+    text-decoration: none;
+    color: white;
+}
+
+/* Css da listagem */
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    background: #c31432;
+    background: -webkit-linear-gradient(to right, #240b36, #c31432);
+    background: linear-gradient(to right, #240b36, #c31432);
+    padding: 1.5em;
+    margin: 1em;
+    border-radius: 1.5em;
+    color: white;
+    display: flex;
+}
+
+
+li:hover {
+    background: #c31432;
+    background: -webkit-linear-gradient(to left, #240b36, #c31432);
+    background: linear-gradient(to left, #240b36, #c31432);
+}
+
+p.text {
+    width: 100%;
+}
+
+p.delete a {
+    text-decoration: none;
+    color: white;
+}

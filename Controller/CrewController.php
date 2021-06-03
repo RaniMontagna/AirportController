@@ -30,10 +30,7 @@ function criar() {
         $crewDao = new CrewDAO();
         $crewDao->create($crew);
 
-        $_SESSION['nomeCrew'] = $crew->nome;
-        $_SESSION['mail'] = $crew->email;
-        $_SESSION['typeCrew'] = $crew->tipo;
-        header("Location:../View/Crew/Detail.php");
+        header("Location:./CrewController.php?operation=consultar");
     } else {
         $err = serialize($erros);
         $_SESSION['erros'] = $err;

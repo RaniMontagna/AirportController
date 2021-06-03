@@ -21,9 +21,7 @@ function criar() {
         $ticketDao = new TicketDAO();
         $ticketDao->create($ticket);
  
-        $_SESSION['aeroportoDestino'] = $ticket->aeroportoDestino;
-        $_SESSION['dataSaida'] = $ticket->dataSaida;
-        header("Location:../View/Ticket/Detail.php");
+        header("Location:./TicketController.php?operation=consultar");
     } else {
         $err = serialize($erros);
         $_SESSION['erros'] = $err;

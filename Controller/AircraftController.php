@@ -26,10 +26,8 @@ function criar() {
 
         $aircraftDao = new AircraftDAO();
         $aircraftDao->create($aircraft);
-
-        $_SESSION['nome'] = $aircraft->nome;
-        $_SESSION['marca'] = $aircraft->marca;
-        header("Location:../View/Aircraft/Detail.php");
+        
+        header("Location:./AircraftController.php?operation=consultar");
     } else {
         $err = serialize($erros);
         $_SESSION['erros'] = $err;

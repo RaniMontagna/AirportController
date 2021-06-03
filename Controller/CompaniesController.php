@@ -24,8 +24,7 @@ function criar() {
         $companiesDao = new CompaniesDAO();
         $companiesDao->create($companies);
 
-        $_SESSION['nomeFantasia'] = $companies->nomeFantasia;
-        header("Location:../View/Companies/Detail.php");
+        header("Location:./CompaniesController.php?operation=consultar");
     } else {
         $err = serialize($erros);
         $_SESSION['erros'] = $err;
