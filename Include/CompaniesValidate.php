@@ -22,5 +22,14 @@ class CompaniesValidate {
             return false;
         }
     }
+
+    public static function testarExisteCNPJ($paramCompania) {
+        $companiesDao = new CompaniesDao();
+        $companies = $companiesDao->searchCompany($paramCompania);
+        if (count($companies) == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
-?>

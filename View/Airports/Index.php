@@ -12,6 +12,9 @@ session_start();
 
     <!-- Css -->
     <link rel="stylesheet" type="text/css" href="../../Public/Css/indexViews.css">
+
+    <!-- FaviIcon -->
+    <link rel="icon" type="imagem/png" href="../../Public/Images/icon.png" />
 </head>
 
 <body>

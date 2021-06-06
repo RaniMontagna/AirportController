@@ -56,7 +56,20 @@
                 echo $e;
             }
         }
+
+        public function searchCompany($cnpj) {
+            try {
+                $statement = $this->connection->prepare("SELECT * FROM companies WHERE cnpj = ?");
+                $statement->bindValue(1, $cnpj);
+                $statement->execute(); 
+                $companies= $statement->fetchAll();
+
+                $this->connection = null;
+
+                return $companies;
+            } catch (PDOException $e) {
+                echo "Ocorreram erros ao consultar se existem companis com esse cnpj";
+                echo $e;
+            }
+        }
     }
-
-
-?>

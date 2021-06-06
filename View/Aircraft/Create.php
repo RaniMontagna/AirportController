@@ -15,11 +15,17 @@ session_start();
 
     <!-- Css -->
     <link rel="stylesheet" type="text/css" href="../../Public/Css/form.css">
+    <link rel="stylesheet" type="text/css" href="../../Public/Css/error.css">
 </head>
 
 <body class="aircraft">
     <?php
     if (isset($_SESSION['usuario'])) { ?>
+        <?php
+        if (isset($_SESSION['erros'])) {
+            $errors = $_SESSION['erros'];
+        }
+        ?>
         <div class="box">
             <form action="../../Controller/AircraftController.php?operation=cadastrar" method="post" name="form_user">
                 <h1>Cadastro | Aeronaves</h1>
@@ -33,18 +39,37 @@ session_start();
                 <label class="principal">Tipo do Motor:</label>
                 <input required class="txtArea" type="text" name="txtTipoMotor" id="txtTipoMotor" placeholder="Turbofan">
 
+                <?php
+                if (isset($errors[1])) {
+                    echo "<div class='messageError'>$errors[1]</div>";
+                    unset($_SESSION['erros'][1]);
+                }
+                ?>
+
                 <label class="principal">Máximo de passageiros:</label>
                 <input required class="txtArea" type="number" name="numberMaxPassageiros" id="numberMaxPassageiros" placeholder="660">
+
+                <?php
+                if (isset($errors[0])) {
+                    echo "<div class='messageError'>$errors[0]</div>";
+                    unset($_SESSION['erros'][0]);
+                }
+                ?>
 
                 <label class="principal">Compania(CNPJ):</label>
                 <input required class="txtArea" type="number" name="numberCompania" id="numberCompania" placeholder="32546896541254">
 
+                <?php
+                if (isset($errors[2])) {
+                    echo "<div class='messageError'>$errors[2]</div>";
+                    unset($_SESSION['erros'][2]);
+                }
+                ?>
+
                 <div class="btns">
-                    <input class="btn-black" type="submit" value="Cadastrar">
-                    <input class="btn-black" type="reset" value="Limpar">
+                    <button class="btn-submit back" onclick="window.location.href = '../app.php'">Voltar para o início</button>
+                    <input class="btn-submit success" type="submit" value="Cadastrar">
                 </div>
-            </form>
-            <button class="btn-back" onclick="window.location.href = '../app.php'">Voltar para o início</button>
         </div>
     <?php } else {
         header("Location:../app.php");

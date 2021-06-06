@@ -4,17 +4,18 @@ include '../Model/Crew.php';
 include '../Include/CrewValidate.php';
 include '../Dao/CrewDAO.php';
 
-function criar() {
+function criar()
+{
     $erros = array();
 
     if (!CrewValidate::testarIdade($_POST['txtIdade'])) {
-        $erros[] = 'Necessário ser maior de idade';
+        $erros[0] = 'Necessário ser maior de idade';
     }
     if (!CrewValidate::testarEmail($_POST['txtEmail'])) {
-        $erros[] = 'Email inválido';
+        $erros[1] = 'Email inválido';
     }
     if (!CrewValidate::testarSenha($_POST['txtSenha'])) {
-        $erros[] = 'Senha precisa conter no mínimo 8 digitos';
+        $erros[2] = 'Senha precisa conter no mínimo 8 digitos';
     }
 
 
@@ -32,13 +33,13 @@ function criar() {
 
         header("Location:./CrewController.php?operation=consultar");
     } else {
-        $err = serialize($erros);
-        $_SESSION['erros'] = $err;
-        header("Location:../View/Crew/Error.php");
+        $_SESSION['erros'] = $erros;
+        header("Location:../View/Crew/Create.php");
     }
 }
 
-function listar() {
+function listar()
+{
     $crewDao = new CrewDao();
     $crew = $crewDao->search();
 
@@ -46,11 +47,12 @@ function listar() {
     header("Location:../View/Crew/List.php");
 }
 
-function atualizar() {
-
+function atualizar()
+{
 }
 
-function deletar() {
+function deletar()
+{
     $id = $_GET["id"];
     if (isset($id)) {
         $crewDao = new CrewDao();
@@ -62,8 +64,8 @@ function deletar() {
 }
 
 $operacao = $_GET["operation"];
-if(isset($operacao)) {
-    switch($operacao) {
+if (isset($operacao)) {
+    switch ($operacao) {
         case 'cadastrar':
             criar();
             break;

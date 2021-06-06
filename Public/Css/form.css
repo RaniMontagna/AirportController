@@ -75,37 +75,23 @@ div.box form div.btns {
     }
 }
 
-.btn-black {
-    background-image: linear-gradient(to right, #232526 0%, #414345 51%, #232526 100%)
-}
-
-.btn-black {
-    padding: 10px 45px;
-    text-align: center;
-    ;
-    background-size: 200% auto;
-    color: white;
-    box-shadow: 0 0 20px #eee;
-    border-radius: 10px;
-}
-
-.btn-black:hover {
-    background-position: right center;
-    /* change the direction of the change here */
-    color: #fff;
-}
-
-.btn-back {
+.btn-submit {
     margin-top: 10px;
-    border: none;
+    border: 1px solid black;
     background: none;
     font-weight: 300;
     font-size: 1em;
     padding: 10px;
     border-radius: 20px;
+    cursor: pointer;
 }
 
-.btn-back:hover {
+.success:hover {
     transition: 0.5s;
-    border: 1px solid black;
+    background-color: #84ffad;
+}
+
+.back:hover {
+    transition: 0.5s;
+    background-color: #ff8484;
 }

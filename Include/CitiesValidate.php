@@ -9,12 +9,21 @@ class CitiesValidate {
         }
     }
 
-    public static function testarCEP($paramCEP) {
+    public static function testarTamanhoCEP($paramCEP) {
         if (strlen($paramCEP) < 8 || strlen($paramCEP) > 8) {
             return false;
         } else {
             return true;
         }
     }
+
+    public static function testarExisteCEP($paramCEP) {
+        $citiesDao = new CitiesDao();
+        $city = $citiesDao->searchCity($paramCEP);
+        if (count($city) == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
-?>

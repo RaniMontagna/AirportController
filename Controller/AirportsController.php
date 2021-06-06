@@ -4,15 +4,18 @@ include '../Model/Airports.php';
 include '../Include/AirportsValidate.php';
 include '../Dao/AirportsDAO.php';
 
-function criar() {
+function criar()
+{
     $erros = array();
 
     if (!AirportsValidate::testarNome($_POST['txtNome'])) {
-        $erros[] = 'Informe um nome que seja válido!';
+        $erros[0] = 'Informe um nome que seja válido!';
     }
-
     if (!AirportsValidate::testarPorte($_POST['txtPorte'])) {
-        $erros[] = 'Porte Inválido.';
+        $erros[1] = 'Porte Inválido. (Pequeno, Medio ou Grande)';
+    }
+    if (!AirportsValidate::testarCEP($_POST['numberCep'])) {
+        $erros[2] = 'Cidade informada não existe no sistema!';
     }
 
     if (count($erros) == 0) {
@@ -22,19 +25,19 @@ function criar() {
         $airports->porte = $_POST['txtPorte'];
         $airports->distancia = $_POST['numberDistancia'];
         $airports->cep = $_POST['numberCep'];
-        
+
         $airportsDao = new AirportsDAO();
         $airportsDao->create($airports);
 
         header("Location:./AirportsController.php?operation=consultar");
     } else {
-        $err = serialize($erros);
-        $_SESSION['erros'] = $err;
-        header("Location:../View/Airports/Error.php");
+        $_SESSION['erros'] = $erros;
+        header("Location:../View/Airports/Create.php");
     }
 }
 
-function listar() {
+function listar()
+{
     $airportsDao = new AirportsDao();
     $airports = $airportsDao->search();
 
@@ -42,11 +45,12 @@ function listar() {
     header("Location:../View/Airports/List.php");
 }
 
-function atualizar() {
-
+function atualizar()
+{
 }
 
-function deletar() {
+function deletar()
+{
     $id = $_GET["id"];
     if (isset($id)) {
         $airportsDao = new AirportsDao();
@@ -58,8 +62,8 @@ function deletar() {
 }
 
 $operacao = $_GET["operation"];
-if(isset($operacao)) {
-    switch($operacao) {
+if (isset($operacao)) {
+    switch ($operacao) {
         case 'cadastrar':
             criar();
             break;

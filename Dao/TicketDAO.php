@@ -56,7 +56,20 @@
                 echo $e;
             }
         }
+
+        public function searchAirport($nameAirport) {
+            try {
+                $statement = $this->connection->prepare("SELECT * FROM airports WHERE nome = ?");
+                $statement->bindValue(1, $nameAirport);
+                $statement->execute(); 
+                $airport = $statement->fetchAll();
+
+                $this->connection = null;
+
+                return $airport;
+            } catch (PDOException $e) {
+                echo "Ocorreram erros ao buscar o aeroporto com o nome definido";
+                echo $e;
+            }
+        }
     }
-
-
-?>

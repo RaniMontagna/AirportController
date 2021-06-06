@@ -4,8 +4,13 @@ include '../Model/Ticket.php';
 include '../Include/TicketValidate.php';
 include '../Dao/TicketDAO.php';
 
-function criar() {
+function criar()
+{
     $erros = array();
+
+    if (!TicketValidate::testarAeroportoDestino($_POST['txtAeroportoDestino'])) {
+        $erros[0] = 'Aeroporto informado não existe no sistema!';
+    }
 
     // if (!TicketValidate::testarData($_POST['dataSaida'])) {
     //     $erros[] = 'A data informada está inválida!';
@@ -20,16 +25,16 @@ function criar() {
 
         $ticketDao = new TicketDAO();
         $ticketDao->create($ticket);
- 
+
         header("Location:./TicketController.php?operation=consultar");
     } else {
-        $err = serialize($erros);
-        $_SESSION['erros'] = $err;
-        header("Location:../View/Ticket/Error.php");
+        $_SESSION['erros'] = $erros;
+        header("Location:../View/Ticket/Create.php");
     }
 }
 
-function listar() {
+function listar()
+{
     $ticketDao = new TicketDao();
     $ticket = $ticketDao->search();
 
@@ -37,11 +42,12 @@ function listar() {
     header("Location:../View/Ticket/List.php");
 }
 
-function atualizar() {
-
+function atualizar()
+{
 }
 
-function deletar() {
+function deletar()
+{
     $id = $_GET["id"];
     if (isset($id)) {
         $ticketDao = new TicketDao();
@@ -53,8 +59,8 @@ function deletar() {
 }
 
 $operacao = $_GET["operation"];
-if(isset($operacao)) {
-    switch($operacao) {
+if (isset($operacao)) {
+    switch ($operacao) {
         case 'cadastrar':
             criar();
             break;

@@ -1,0 +1,18 @@
+/* Divs de error */
+
+div.messageErrorLogin {
+    background-color: #ff9999;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+div.messageError {
+    background-color: #ff9999;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+
+div.messageError {
+    font-size: 0.8em;
+}

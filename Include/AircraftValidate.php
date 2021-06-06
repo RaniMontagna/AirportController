@@ -15,5 +15,14 @@ class AircraftValidate {
             return false;
         }
     }
+
+    public static function testarCompania($paramCompania) {
+        $aircraftDao = new AircraftDao();
+        $companies = $aircraftDao->searchCompany($paramCompania);
+        if (count($companies) == 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 }
-?>

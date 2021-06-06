@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -12,16 +15,22 @@
 
     <!-- Css -->
     <link rel="stylesheet" type="text/css" href="./Public/Css/index.css">
+    <link rel="stylesheet" type="text/css" href="./Public/Css/error.css">
 </head>
 
 <body>
     <div class="box">
-        <img src="/Public/Images/icon.png" /> 
+        <img src="/Public/Images/icon.png" />
         <h1>AIRPORT CONTROLLER</h1>
         <h2>FAÇA SEU LOGIN</h2>
         <form action="./Controller/AuthController.php?operation=login" method="post" name="form_user">
             <input required class="inputs" type="text" name="txtEmail" id="txtEmail" placeholder="E-mail" />
             <input required class="inputs" type="password" name="txtSenha" id="txtSenha" placeholder="Senha" />
+            <?php
+            if (@$_SESSION['userError'] == 1) {
+                echo "<div class='messageErrorLogin'> <p>Usuário/Senha informado está incorreto!</p> </div>";
+            }
+            ?>
             <input class="btn-grad" type="submit" value="Login" />
         </form>
     </div>

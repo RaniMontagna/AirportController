@@ -2,7 +2,13 @@
 
 class AirportsValidate {
     public static function testarCep($paramCep) {
-        //comando futuro
+        $airportsDao = new AirportsDao();
+        $city = $airportsDao->searchCity($paramCep);
+        if (count($city) == 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     public static function testarNome($paramNome) {
@@ -21,4 +27,3 @@ class AirportsValidate {
         }
     }
 }
-?>

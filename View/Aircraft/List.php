@@ -15,6 +15,9 @@ session_start();
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+    <!-- FaviIcon -->
+    <link rel="icon" type="imagem/png" href="../../Public/Images/icon.png" />
 </head>
 
 <body>
@@ -35,7 +38,7 @@ session_start();
 
                 foreach ($aircraft as $u) {
                     $id = $u['id'];
-                    $texto = 'Aeronave '. $u['marca'] . ' ' . $u['nome'] . ' - Compania Áerea ' . $u['compania'];
+                    $texto = 'Aeronave ' . $u['marca'] . ' ' . $u['nome'] . ' - Compania Áerea ' . $u['compania'];
                     echo "<li>
                     <p class='text'>$texto</p>
                     <p class='delete'><a href='../../Controller/AircraftController.php?operation=deletar&id=$id'><i class='fas fa-trash-alt'></i></a></p>

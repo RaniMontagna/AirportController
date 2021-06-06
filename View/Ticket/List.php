@@ -15,6 +15,9 @@ session_start();
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+    <!-- FaviIcon -->
+    <link rel="icon" type="imagem/png" href="../../Public/Images/icon.png" />
 </head>
 
 <body>

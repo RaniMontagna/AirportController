@@ -4,19 +4,22 @@ include '../Model/Cities.php';
 include '../Include/CitiesValidate.php';
 include '../Dao/CitiesDAO.php';
 
-function criar() {
+function criar()
+{
     $erros = array();
 
     if (!CitiesValidate::testarEstado($_POST['txtEstado'])) {
-        $erros[] = 'Tamanho da sigla do estado é inválida.';
+        $erros[0] = 'Tamanho da sigla do estado é inválida.';
     }
 
-    if (!CitiesValidate::testarCEP($_POST['numberCEP'])) {
-        $erros[] = 'Número do cep informado é inválido.';
+    if (!CitiesValidate::testarTamanhoCEP($_POST['numberCEP'])) {
+        $erros[1] = 'Número do cep informado é inválido.';
+    } else if (!CitiesValidate::testarExisteCEP($_POST['numberCEP'])) {
+        $erros[2] = 'Cep informado já existe no sistema!';
     }
-
 
     if (count($erros) == 0) {
+
         $cities = new Cities();
 
         $cities->cep = $_POST['numberCEP'];
@@ -29,13 +32,13 @@ function criar() {
 
         header("Location:./CitiesController.php?operation=consultar");
     } else {
-        $err = serialize($erros);
-        $_SESSION['erros'] = $err;
-        header("Location:../View/Cities/Error.php");
+        $_SESSION['erros'] = $erros;
+        header("Location:../View/Cities/Create.php");
     }
 }
 
-function listar() {
+function listar()
+{
     $citiesDao = new CitiesDao();
     $cities = $citiesDao->search();
 
@@ -43,11 +46,12 @@ function listar() {
     header("Location:../View/Cities/List.php");
 }
 
-function atualizar() {
-
+function atualizar()
+{
 }
 
-function deletar() {
+function deletar()
+{
     $id = $_GET["id"];
     if (isset($id)) {
         $citiesDao = new CitiesDao();
@@ -59,8 +63,8 @@ function deletar() {
 }
 
 $operacao = $_GET["operation"];
-if(isset($operacao)) {
-    switch($operacao) {
+if (isset($operacao)) {
+    switch ($operacao) {
         case 'cadastrar':
             criar();
             break;

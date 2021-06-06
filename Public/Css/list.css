@@ -5,6 +5,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
 body,
 html {
     height: 100%;
@@ -52,6 +53,8 @@ li {
     border-radius: 1.5em;
     color: white;
     display: flex;
+    box-shadow: 0 0 0.5em black;
+    transition: 1s;
 }
 
 

@@ -57,7 +57,20 @@
                 echo $e;
             }
         }
+
+        public function searchCity($cep) {
+            try {
+                $statement = $this->connection->prepare("SELECT * FROM cities WHERE cep = ?");
+                $statement->bindValue(1, $cep);
+                $statement->execute(); 
+                $city = $statement->fetchAll();
+
+                $this->connection = null;
+
+                return $city;
+            } catch (PDOException $e) {
+                echo "Ocorreram erros ao buscar uma cidade com esse cep";
+                echo $e;
+            }
+        }
     }
-
-
-?>
