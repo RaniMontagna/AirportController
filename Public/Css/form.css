@@ -37,6 +37,11 @@ body.airport {
     background-size: cover;
 }
 
+body.user {
+    background: url("../Images/bg_users.jpg");
+    background-size: cover;
+}
+
 div.box {
     background-color: white;
     padding: 40px 100px;

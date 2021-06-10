@@ -9,5 +9,14 @@
                 return false;
             }
         }
+
+        public static function testarExisteUser($paramEmail) {
+            $userDao = new UserDao();
+            $user = $userDao->searchUser($paramEmail);
+            if (count($user) == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
-?>

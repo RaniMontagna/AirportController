@@ -41,7 +41,16 @@ session_start();
                     <li>
                         <a href="./Ticket/Index.php">PASSAGENS</a>
                     </li>
+                    <?php
+                    $user = unserialize($_SESSION['usuario']);
+                    if ($user[0][1] == 'admin@admin') {
+                    ?>
+                        <li>
+                            <a href="./User/Index.php">USUÁRIOS</a>
+                        </li>
+                    <?php } ?>
                 </nav>
+
 
                 <div class="dropdown">
                     <button class="dropbtn">CADASTROS E CONSULTAS</button>
@@ -52,6 +61,11 @@ session_start();
                         <a href="./Companies/Index.php">COMPANIAS</a>
                         <a href="./Airports/Index.php">AEROPORTOS</a>
                         <a href="./Ticket/Index.php">PASSAGENS</a>
+                        <?php
+                        if ($user[0][1] == 'admin@admin') {
+                        ?>
+                            <a href="./User/Index.php">USUÁRIOS</a>
+                        <?php } ?>
                     </div>
                 </div>
             </div>

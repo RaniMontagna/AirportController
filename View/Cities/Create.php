@@ -62,7 +62,7 @@ session_start();
                 <input required class="txtArea" type="text" name="txtPais" id="txtPais" placeholder="Brasil">
 
                 <div class="btns">
-                    <button class="btn-submit back" onclick="window.location.href = '../app.php'">Voltar para o início</button>
+                    <button type="reset" class="btn-submit back" onclick="window.location.href = '../app.php'">Voltar para o início</button>
                     <input class="btn-submit success" type="submit" value="Cadastrar">
                 </div>
         </div>
