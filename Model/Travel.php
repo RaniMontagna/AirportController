@@ -1,21 +1,19 @@
-<?php 
+<?php
 
-class Ticket {
+class Travel {
     var $id;
+    var $aviao;
     var $aeroportoDestino;
     var $dataSaida;
-    var $preco;
-    
-    //Metódo para atribuir/buscar valores nas variavéis
-    public function __construct() {}
 
+    //Método para atribuir/buscar valores das variáveis
+    public function __construct() {}
+    
     public function __set($propriedade, $valor) {
-        $this->propriedade = $valor;
+        $this->propriedades = $valor;
     }
 
     public function __get($propriedade) {
         return $this->propriedade;
-    }
+    } 
 }
-
-?>

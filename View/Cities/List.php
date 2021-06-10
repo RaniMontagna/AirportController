@@ -46,6 +46,8 @@ session_start();
                 }
 
                 unset($_SESSION['cities']);
+            } else {
+                header("location:../../Controller/CitiesController.php?operation=consultar");
             }
             ?>
         </ul>

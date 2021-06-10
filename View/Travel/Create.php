@@ -1,5 +1,7 @@
 <?php
 session_start();
+$airport = $_SESSION['airportList'];
+$aircraft = $_SESSION['aircraftList'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -8,7 +10,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro das passagens</title>
+    <title>Cadastro de viagens</title>
 
     <!-- FaviIcon -->
     <link rel="icon" type="imagem/png" href="../../Public/Images/icon.png" />
@@ -27,24 +29,33 @@ session_start();
         }
         ?>
         <div class="box">
-            <form action="../../Controller/TicketController.php?operation=cadastrar" method="post" name="form_user">
-                <h1>Cadastro | Passagem</h1>
+            <form action="../../Controller/TravelController.php?operation=cadastrar" method="post" name="form_user">
+                <h1>Cadastro | Viagem</h1>
 
-                <label class="principal">Aeroporto Destino:</label>
-                <input required class="txtArea" type="text" name="txtAeroportoDestino" id="txtAeroportoDestino" placeholder="Aeroporto Internacional de Garulhos">
+                <label class="principal">Avião:</label>
+                <select class="txtArea" name="selectAviao" id="selectAviao">
+                    <?php
+                    foreach ($aircraft as $a) {
+                        $value = $a['id'];
+                        $label = $a['marca'] . ' ' . $a['nome'];
+                        echo "<option value='$value'>$label</option>";
+                    }
+                    ?>
+                </select>
 
-                <?php
-                if (isset($errors[0])) {
-                    echo "<div class='messageError'>$errors[0]</div>";
-                    unset($_SESSION['erros'][0]);
-                }
-                ?>
+                <label class="principal">Aeroporto Destino</label>
+                <select class="txtArea" name="selectAeroporto" id="selectAeroporto">
+                    <?php
+                    foreach ($airport as $a) {
+                        $value = $a['id'];
+                        $label = $a['nome'];
+                        echo "<option value='$value'>$label</option>";
+                    }
+                    ?>
+                </select>
 
                 <label class="principal">Data Saída:</label>
                 <input required class="txtArea" type="date" name="dataSaida" id="dataSaida" placeholder="17/05/2021">
-
-                <label class="principal">Preço:</label>
-                <input required class="txtArea" type="number" name="numberPreco" id="numberPreco">
 
                 <div class="btns">
                     <button type="reset" class="btn-submit back" onclick="window.location.href = '../app.php'">Voltar para o início</button>

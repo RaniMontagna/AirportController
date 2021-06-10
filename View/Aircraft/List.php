@@ -46,6 +46,8 @@ session_start();
                 }
 
                 unset($_SESSION['aircraft']);
+            } else {
+                header("location:../../Controller/AircraftController.php?operation=consultar");
             }
             ?>
         </ul>

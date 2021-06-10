@@ -108,7 +108,7 @@
     background-color: #202020;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     .intro .main h2 {
         font-size: 1.8em;
     }

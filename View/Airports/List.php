@@ -46,6 +46,8 @@ session_start();
                 }
 
                 unset($_SESSION['airports']);
+            } else {
+                header("location:../../Controller/AirportsController.php?operation=consultar");
             }
             ?>
         </ul>

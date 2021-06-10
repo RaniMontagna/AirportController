@@ -47,6 +47,8 @@ session_start();
                 }
 
                 unset($_SESSION['user']);
+            } else {
+                header("location:../../Controller/UserController.php?operation=consultar");
             }
             ?>
         </ul>

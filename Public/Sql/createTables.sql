@@ -39,21 +39,29 @@ create table `airportcontroller` . `crew` (
     tipo varchar(20) NOT NULL
 );
 
-create table `airportcontroller` . `tickets` (
-	id integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    aeroportoDestino varchar(100) NOT NULL,
-    dataSaida date NOT NULL,
-    preco real NOT NULL,
-    CONSTRAINT fk_aeroportoDestino FOREIGN KEY (aeroportoDestino) REFERENCES airports(nome)
-);
-
 create table `airportcontroller` . `user` (
 	id integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	email varchar(50) NOT NULL,
     senha varchar(30) NOT NULL
 );
 
-INSERT INTO User (email, senha) VALUES ('admin@admin', '123');
+create table `airportcontroller` . `travels` (
+    id integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    aviao integer NOT NULL,
+    aeroportoDestino integer NOT NULL,
+    dataSaida date NOT NULL,
+    CONSTRAINT fk_aeroportoDestino FOREIGN KEY (aeroportoDestino) REFERENCES airports(id),
+    CONSTRAINT fk_aviao FOREIGN KEY (aviao) REFERENCES aircraft(id)
+);
+
+create table `airportcontroller` . `travelsCrew` (
+    voo integer NOT NULL,
+    tripulante integer NOT NULL,
+    CONSTRAINT fk_crew FOREIGN KEY (tripulante) REFERENCES crew(id),
+    CONSTRAINT pk_travelsCrew PRIMARY KEY (voo, tripulante)
+);
+
+INSERT INTO User (email, senha) VALUES ('admin@admin', '123'); 
 
 SELECT * FROM Cities;
 SELECT * FROM Crew;
@@ -61,3 +69,4 @@ SELECT * FROM Companies;
 SELECT * FROM Tickets;
 SELECT * FROM Aircraft;
 SELECT * FROM Airports;
+SELECT * FROM Travels;

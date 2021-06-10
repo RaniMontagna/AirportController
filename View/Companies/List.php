@@ -46,6 +46,8 @@ session_start();
                 }
 
                 unset($_SESSION['companies']);
+            } else {
+                header("location:../../Controller/CompaniesController.php?operation=consultar");
             }
             ?>
         </ul>

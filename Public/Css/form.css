@@ -70,6 +70,11 @@ div.box form input.txtArea {
     margin: 0px 30px;
 }
 
+div.box form select.txtArea {
+    padding: 5px;
+    margin: 0px 30px;
+}
+
 div.box form div.btns {
     margin-top: 20px;
 }

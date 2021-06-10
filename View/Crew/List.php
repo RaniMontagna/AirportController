@@ -46,6 +46,8 @@ session_start();
                 }
 
                 unset($_SESSION['crew']);
+            } else {
+                header("location:../../Controller/CrewController.php?operation=consultar");
             }
             ?>
         </ul>

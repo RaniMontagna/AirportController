@@ -39,7 +39,7 @@ session_start();
                         <a href="./Airports/Index.php">AEROPORTOS</a>
                     </li>
                     <li>
-                        <a href="./Ticket/Index.php">PASSAGENS</a>
+                        <a href="./Travel/Index.php">VIAGENS</a>
                     </li>
                     <?php
                     $user = unserialize($_SESSION['usuario']);
@@ -60,7 +60,7 @@ session_start();
                         <a href="./Cities/Index.php">CIDADES</a>
                         <a href="./Companies/Index.php">COMPANIAS</a>
                         <a href="./Airports/Index.php">AEROPORTOS</a>
-                        <a href="./Ticket/Index.php">PASSAGENS</a>
+                        <a href="./Travel/Index.php">VIAGENS</a>
                         <?php
                         if ($user[0][1] == 'admin@admin') {
                         ?>
