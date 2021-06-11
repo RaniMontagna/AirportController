@@ -42,6 +42,11 @@ body.user {
     background-size: cover;
 }
 
+body.travels {
+    background: url("../Images/bg_travels2.jpg");
+    background-size: cover;
+}
+
 div.box {
     background-color: white;
     padding: 40px 100px;

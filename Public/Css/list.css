@@ -68,6 +68,12 @@ p.text {
     width: 100%;
 }
 
+p.passageiros a {
+    margin-right: 1em;
+    text-decoration: none;
+    color: white;
+}
+
 p.delete a {
     text-decoration: none;
     color: white;

@@ -20,7 +20,7 @@ $aircraft = $_SESSION['aircraftList'];
     <link rel="stylesheet" type="text/css" href="../../Public/Css/error.css">
 </head>
 
-<body class="crew">
+<body class="travels">
     <?php
     if (isset($_SESSION['usuario'])) { ?>
         <?php

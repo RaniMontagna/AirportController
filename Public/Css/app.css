@@ -6,6 +6,8 @@
     padding: 0;
 }
 
+/* Css para a tela de abertura do site */
+
 .intro {
     background-color: #00000070;
     background-size: cover;
@@ -137,4 +139,178 @@
     color: white;
     font-weight: 300;
     margin-bottom: 2em;
+}
+
+/* Css para a div sobre */
+
+div.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em 1.5em 0em 1.5em;
+}
+
+div.about h1 {
+    font-weight: 300;
+}
+
+div.about p {
+    text-align: justify;
+}
+
+/* Css seta */
+
+.arrow {
+    text-align: center;
+    margin: 2% 0;
+    color: black;
+}
+
+.bounce {
+    -moz-animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-20px);
+    }
+
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+
+/* Css para as divs de cada crud */
+div.contents {
+    background-color: black;
+    color: white;
+    padding: 2em 15em;
+    display: flex;
+}
+
+div.contents div {
+    width: 100%;
+}
+
+div.contents div.image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.contents div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media (max-width: 1500px) {
+    div.contents {
+        padding: 2em;
+    }
+}
+
+@media (max-width: 1000px) {
+    div.contents div.image {
+        display: none;
+    }
+}
+
+
+div.contents div.image img {
+    width: 90%;
+    border-radius: 5em;
+}
+
+
+div.contents ul {
+    margin-left: 2em;
+    font-weight: 300;
+}
+
+div.contents p {
+    text-align: justify;
+}
+
+div.contents h1 {
+    margin: 0 0 -5px 0;
+}
+
+div.contents h2 {
+    font-weight: 300;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+div.contents a.btn {
+    text-decoration: none;
+    color: black;
+    background-color: transparent;
+    padding: 0.4em 1.3em;
+    border-radius: 0.8em;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+}
+
+div.modify {
+    background-color: white;
+    color: black;
+    background-image: none;
+
+}
+
+div.modify a.btn {
+    border: 1px solid black;
+    color: black;
+}
+
+div.contents a.btn:hover {
+    transition: 0.5s;
+    color: black;
+    background-color: white;
+}
+
+div.modify a.btn:hover {
+    background-color: black;
+    color: white;
+    background-image: none;
+}
+
+/* Rodapé da pagina */
+
+div.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3em 0em 0em 0em;
+    flex-direction: column;
+}
+
+.footerBackground1 {
+    background: #000000;
+    background: -webkit-linear-gradient(to top, #434343, #000000);
+    background: linear-gradient(to top, #434343, #000000);
+    color: white;
+}
+
+.footerBackground2 {
+    background: #ECE9E6;
+    background: -webkit-linear-gradient(to bottom, #FFFFFF, #ECE9E6);
+    background: linear-gradient(to bottom, #FFFFFF, #ECE9E6);
+    color: black;
 }
