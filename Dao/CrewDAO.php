@@ -11,7 +11,7 @@
         public function create($crew) {
             try {
                 $statement = $this->connection->prepare(
-                    "INSERT INTO crew(nome, idade, email, senha, tipo) VALUES (?,?,?,?,?)"
+                    "INSERT INTO crew(nome, idade, email, senha, tipo) VALUES (?,?,?,md5(?),?)"
                 );
 
                 $statement->bindValue(1, $crew->nome);

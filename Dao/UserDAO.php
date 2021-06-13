@@ -14,7 +14,7 @@ class UserDAO
     {
         try {
             $statement = $this->connection->prepare(
-                "INSERT INTO user (email, senha) VALUES (?,?)"
+                "INSERT INTO user (email, senha) VALUES (?,md5(?))"
             );
 
             $statement->bindValue(1, $user->email);
@@ -63,7 +63,7 @@ class UserDAO
     public function find($email, $password)
     {
         try {
-            $statement = $this->connection->prepare("SELECT * FROM User WHERE email = ? and senha = ?");
+            $statement = $this->connection->prepare("SELECT * FROM User WHERE email = ? and senha = md5(?)");
             $statement->bindValue(1, $email);
             $statement->bindValue(2, $password);
             $statement->execute();
