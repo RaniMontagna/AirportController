@@ -51,10 +51,14 @@ $aircraft = $_SESSION['aircraftList'];
                     }
                     $dataFormatada = date("d/m/Y", strtotime($u['dataSaida']));
                     $id = $u['id'];
-                    $texto = 'Dia <b>' . $dataFormatada . '</b>: Viagem com o Avião <b>' . $nomeAircraft . '</b> para o <b>' . $nomeAeroporto . '</b>';
-                    $botaoPassageiro = "<a href='.php?id=$id'>Passageiros</a>";
+                    $texto = 'Dia <b>' . $dataFormatada . '</b>: Viagem com o Avião <b>' . $nomeAircraft .
+                        '</b> para o <b>' . $nomeAeroporto . '</b>';
+
+                    $botaoPassageiro = "<a href='../../Controller/TravelCrewController.php?operation=consultar&id=$id'>
+                    <i class='fas fa-users'></i></a>";
                     echo "<li>
                     <p class='text'>$texto</p>
+                    <p class='crew'>$botaoPassageiro</p>
                     <p class='delete'><a href='../../Controller/TravelController.php?operation=deletar&id=$id'><i class='fas fa-trash-alt'></i></a></p>
                     </li>";
                 }

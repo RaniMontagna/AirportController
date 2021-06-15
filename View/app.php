@@ -281,7 +281,7 @@ session_start();
                 if ($user[0][1] == 'admin@admin') { ?> class="footer footerBackground1" <?php } else { ?> class="footer footerBackground2" <?php } ?>>
             <p>© Copyright 2021 Ranielli e Bernardo.</p>
             <a href="#intro" class="arrow bounce" style="padding: 0em 0em 0em 0em; font-size: 2em;">
-                <i class="fas fa-angle-double-up" <?php if ($user[0][1] == 'admin@admin') { ?> style="color: white"> <?php } ?> </i>
+                <i class="fas fa-angle-double-up" <?php if ($user[0][1] == 'admin@admin') { ?> style="color: white" <?php } ?>> </i>
             </a>
         </div>
     <?php } else { ?>

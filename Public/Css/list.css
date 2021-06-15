@@ -78,3 +78,50 @@ p.delete a {
     text-decoration: none;
     color: white;
 }
+
+p.crew a {
+    text-decoration: none;
+    color: white;
+    margin-right: 1em;
+}
+
+/* Css para list do TravelCrew */
+
+h1.addCrew {
+    font-weight: 300;
+    text-align: center;
+    margin-top: 2em;
+}
+
+form {
+    margin-top: 1em;
+    margin-bottom: 3em;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+form select {
+    padding: 0em 1em;
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+form option {
+    font-weight: 300;
+    font-size: 0.8em;
+}
+
+form button {
+    margin: 0em 1em;
+    padding: 0em 1em;
+    background-color: transparent;
+    border: 2px solid rgb(117, 117, 117);
+    color: rgb(117, 117, 117);
+}
+
+form button:hover {
+    transition: 0.5s;
+    color: white;
+    background-color: rgb(117, 117, 117);
+}

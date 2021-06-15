@@ -35,17 +35,17 @@ create table `airportcontroller` . `crew` (
     nome varchar(30) NOT NULL,
     idade integer,
     email varchar(50) NOT NULL,
-    senha varchar(30) NOT NULL,
+    senha varchar(50) NOT NULL,
     tipo varchar(20) NOT NULL
 );
 
 create table `airportcontroller` . `user` (
 	id integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	email varchar(50) NOT NULL,
-    senha varchar(30) NOT NULL
+    senha varchar(50) NOT NULL
 );
 
-create table `airportcontroller` . `travels` (
+	create table `airportcontroller` . `travels` (
     id integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
     aviao integer NOT NULL,
     aeroportoDestino integer NOT NULL,
@@ -61,7 +61,7 @@ create table `airportcontroller` . `travelsCrew` (
     CONSTRAINT pk_travelsCrew PRIMARY KEY (voo, tripulante)
 );
 
-INSERT INTO User (email, senha) VALUES ('admin@admin', '123'); 
+INSERT INTO User (email, senha) VALUES ('admin@admin', '202cb962ac59075b964b07152d234b70'); 
 
 SELECT * FROM Cities;
 SELECT * FROM Crew;
@@ -70,3 +70,4 @@ SELECT * FROM Tickets;
 SELECT * FROM Aircraft;
 SELECT * FROM Airports;
 SELECT * FROM Travels;
+SELECT * FROM TravelsCrew;
