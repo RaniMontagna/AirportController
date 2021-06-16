@@ -7,6 +7,8 @@
 </ul>
   
 <h2>Descrição, objetivo e justificativa</h2>
+<h3>Vídeo explicativo:</h3>
+<p>https://www.youtube.com/watch?v=i1TxApNbxLc</p>
 <h3>Escopo:</h3>
 <p> Sistema para aeroportos comerciais com o intuído de ajudar a empresa a controlar toda a entrada e saída de dados. Ou seja, desde a entrada de novos aviões, até o controle de cada usuário do sistema seja ele passageiro, aeromoça, piloto ou copiloto. </p>
 <h3>Objetivo:</h3>
