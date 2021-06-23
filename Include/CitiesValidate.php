@@ -1,7 +1,9 @@
 <?php
 
-class CitiesValidate {
-    public static function testarEstado($paramEstado) {
+class CitiesValidate
+{
+    public static function testarEstado($paramEstado)
+    {
         if (strlen($paramEstado) < 2 || strlen($paramEstado) > 2) {
             return false;
         } else {
@@ -9,15 +11,17 @@ class CitiesValidate {
         }
     }
 
-    public static function testarTamanhoCEP($paramCEP) {
-        if (strlen($paramCEP) < 8 || strlen($paramCEP) > 8) {
+    public static function testarTamanhoCEP($paramCEP)
+    {
+        if (strlen($paramCEP) < 9 || strlen($paramCEP) > 9) {
             return false;
         } else {
             return true;
         }
     }
 
-    public static function testarExisteCEP($paramCEP) {
+    public static function testarExisteCEP($paramCEP)
+    {
         $citiesDao = new CitiesDao();
         $city = $citiesDao->searchCity($paramCEP);
         if (count($city) == 0) {

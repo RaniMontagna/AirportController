@@ -16,6 +16,10 @@ session_start();
     <!-- Css -->
     <link rel="stylesheet" type="text/css" href="../../Public/Css/form.css">
     <link rel="stylesheet" type="text/css" href="../../Public/Css/error.css">
+
+    <!-- JQuery para mask -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://rawgit.com/RobinHerbots/Inputmask/5.x/dist/jquery.inputmask.js"></script>
 </head>
 
 <body class="airport">
@@ -53,7 +57,13 @@ session_start();
                 <input required class="txtArea" type="number" name="numberDistancia" id="numberDistancia" placeholder="1257">
 
                 <label class="principal">CEP:</label>
-                <input required class="txtArea" type="number" name="numberCep" id="numberCep" placeholder="07190972">
+                <input required class="txtArea" type="text" name="numberCep" id="numberCep" placeholder="_____-___">
+
+                <script>
+                    $(document).ready(function() {
+                        $("#numberCep").inputmask('99999-999');
+                    });
+                </script>
 
                 <?php
                 if (isset($errors[2])) {

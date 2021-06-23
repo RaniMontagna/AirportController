@@ -16,6 +16,10 @@ session_start();
     <!-- Css -->
     <link rel="stylesheet" type="text/css" href="../../Public/Css/form.css">
     <link rel="stylesheet" type="text/css" href="../../Public/Css/error.css">
+
+    <!-- JQuery para mask -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://rawgit.com/RobinHerbots/Inputmask/5.x/dist/jquery.inputmask.js"></script>
 </head>
 
 <!-- echo "<div class='messageError'>$errors[1]</div>"; -->
@@ -32,7 +36,13 @@ session_start();
             <form action="../../Controller/CitiesController.php?operation=cadastrar" method="post" name="form_user">
                 <h1>Cadastro | Cidades</h1>
                 <label class="principal">CEP:</label>
-                <input required class="txtArea" type="number" name="numberCEP" id="numberCEP" placeholder="95360000">
+                <input required class="txtArea" type="text" name="numberCEP" id="numberCEP" placeholder="_____-___">
+
+                <script>
+                    $(document).ready(function() {
+                        $("#numberCEP").inputmask('99999-999');
+                    });
+                </script>
 
                 <?php
                 if (isset($errors[1])) {

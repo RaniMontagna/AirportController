@@ -16,6 +16,10 @@ session_start();
     <!-- Css -->
     <link rel="stylesheet" type="text/css" href="../../Public/Css/form.css">
     <link rel="stylesheet" type="text/css" href="../../Public/Css/error.css">
+
+    <!-- JQuery para mask -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://rawgit.com/RobinHerbots/Inputmask/5.x/dist/jquery.inputmask.js"></script>
 </head>
 
 <body class="companies">
@@ -31,7 +35,13 @@ session_start();
                 <h1>Cadastro | Companias</h1>
 
                 <label class="principal">CNPJ:</label>
-                <input required class="txtArea" type="number" name="numberCNPJ" id="numberCNPJ" placeholder="03342487000189">
+                <input required class="txtArea" type="text" name="numberCNPJ" id="numberCNPJ" placeholder="__.___.___/____-__">
+
+                <script>
+                    $(document).ready(function() {
+                        $("#numberCNPJ").inputmask('99.999.999/9999-99');
+                    });
+                </script>
 
                 <?php
                 if (isset($errors[0])) {
